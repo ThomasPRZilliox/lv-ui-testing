@@ -11,6 +11,7 @@
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
 		<Item Name="test" Type="Folder">
+			<Item Name="test-0mq.vi" Type="VI" URL="../test-0mq.vi"/>
 			<Item Name="win1.vi" Type="VI" URL="../win1.vi"/>
 			<Item Name="win2.vi" Type="VI" URL="../win2.vi"/>
 		</Item>
