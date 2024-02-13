@@ -13,8 +13,10 @@
 			</Item>
 			<Item Name="zmq handler" Type="Folder">
 				<Item Name="click.vi" Type="VI" URL="../ui-testing/click.vi"/>
+				<Item Name="get subpanel value.vi" Type="VI" URL="../ui-testing/get subpanel value.vi"/>
 				<Item Name="get value.vi" Type="VI" URL="../ui-testing/get value.vi"/>
 				<Item Name="set value DBL.vi" Type="VI" URL="../ui-testing/set value DBL.vi"/>
+				<Item Name="subpanel.vi" Type="VI" URL="../ui-testing/subpanel.vi"/>
 			</Item>
 		</Item>
 		<Item Name="public" Type="Folder">

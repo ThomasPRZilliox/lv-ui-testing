@@ -13,6 +13,9 @@
 		<Item Name="Example" Type="Folder">
 			<Item Name="example 1 - plot.vi" Type="VI" URL="../ui-testing/example 1 - plot.vi"/>
 			<Item Name="example 2 - value.vi" Type="VI" URL="../ui-testing/example 2 - value.vi"/>
+			<Item Name="example 3 - subpanel.vi" Type="VI" URL="../ui-testing/example 3 - subpanel.vi"/>
+			<Item Name="example 3 - subpanel1.vi" Type="VI" URL="../ui-testing/example 3 - subpanel1.vi"/>
+			<Item Name="example 3 - subpanel2.vi" Type="VI" URL="../ui-testing/example 3 - subpanel2.vi"/>
 		</Item>
 		<Item Name="test" Type="Folder">
 			<Item Name="test-0mq.vi" Type="VI" URL="../test-0mq.vi"/>
