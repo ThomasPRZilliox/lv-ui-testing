@@ -12,6 +12,15 @@ print("Connecting to LabVIEW server…")
 socket = context.socket(zmq.REQ)
 socket.connect("tcp://localhost:5555")
 
+def SP_click_on_button(subpanel_label,control_label):
+    logging.info(f"Send request to click on control named {control_label}.")
+    json = '{"message":"SP_click","payload":{"subpanel":"' + subpanel_label + '","control":"'+ control_label +'"}}'
+    socket.send(json.encode())
+
+    #  Get the reply.
+    message = socket.recv()
+    return message.decode("utf-8") == "clicked"
+
 
 def get_front_most():
     logging.info("Send request for front most VI.")
@@ -42,8 +51,33 @@ def get_subpanel_value(subpanel_label,control_label):
 
     #  Get the reply.
     message = socket.recv()
-    data = message.decode("utf-8")
+    data = message.decode("utf-8").split('=')[1]
     return  data
+
+def get_subpanel_value_DBL(subpanel_label,control_label):
+    double_string = get_subpanel_value(subpanel_label,control_label)
+    result_double = float(double_string)
+    return result_double
+
+def get_subpanel_value_bool(subpanel_label,control_label):
+    bool_string = get_subpanel_value(subpanel_label,control_label)
+    return bool_string == "TRUE"
+
+
+def set_subpanel_value_dbl(subpanel_label,control_label,number):
+    logging.info(f"Sending request for value update of control named {control_label}")
+    number = f"{number}"
+    json = '{"message":"setSubpanelValueDBL","payload":{"subpanel":"' + subpanel_label + '","control":"' + control_label + '","value":'+ number +'}}'
+    socket.send(json.encode())
+
+    #  Get the reply.
+    message = socket.recv()
+    if("Value set !" == message.decode("utf-8")):
+        logging.info(f"Update successful !")
+    else:
+        logging.info(f"Something went wrong with the update...")
+
+
 
 
 
@@ -67,6 +101,12 @@ def get_value(control_label):
     data = message.decode("utf-8").split('=')[1]
 
     return data
+
+def get_value_dbl(control_label):
+    double_string = get_value(control_label)
+    result_double = float(double_string)
+    return result_double
+
 
 def get_value_bool(control_label):
     logging.info(f"Sending request for value of the bool control named {control_label}")
