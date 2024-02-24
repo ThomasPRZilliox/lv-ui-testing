@@ -12,17 +12,10 @@ print("Connecting to LabVIEW server…")
 socket = context.socket(zmq.REQ)
 socket.connect("tcp://localhost:5555")
 
-def SP_click_on_button(subpanel_label,control_label):
-    logging.info(f"Send request to click on control named {control_label}.")
-    json = '{"message":"SP_click","payload":{"subpanel":"' + subpanel_label + '","control":"'+ control_label +'"}}'
-    socket.send(json.encode())
 
-    #  Get the reply.
-    message = socket.recv()
-    return message.decode("utf-8") == "clicked"
+# All methods related to the Front Most Vis
 
-
-def get_front_most():
+def FMV_get_vi_name():
     logging.info("Send request for front most VI.")
     json = '{"message":"frontMostVi"}'
     socket.send(json.encode())
@@ -33,56 +26,7 @@ def get_front_most():
     logging.info(f"Received reply {front_most_vi}")
     return  front_most_vi
 
-def get_subpanel(subpanel_label):
-    logging.info("Send request for subpanel VI.")
-    json = '{"message":"subpanel","payload":"' + subpanel_label + '"}'
-    socket.send(json.encode())
-
-    #  Get the reply.
-    message = socket.recv()
-    subpanel_vi = message.decode("utf-8")
-    logging.info(f"VI in subpanel is {subpanel_vi}")
-    return  subpanel_vi
-
-def get_subpanel_value(subpanel_label,control_label):
-    logging.info("Send request for subpanel VI.")
-    json = '{"message":"getSubpanelValue","payload":{"subpanel":"' + subpanel_label + '","control":"'+ control_label +'"}}'
-    socket.send(json.encode())
-
-    #  Get the reply.
-    message = socket.recv()
-    data = message.decode("utf-8").split('=')[1]
-    return  data
-
-def get_subpanel_value_DBL(subpanel_label,control_label):
-    double_string = get_subpanel_value(subpanel_label,control_label)
-    result_double = float(double_string)
-    return result_double
-
-def get_subpanel_value_bool(subpanel_label,control_label):
-    bool_string = get_subpanel_value(subpanel_label,control_label)
-    return bool_string == "TRUE"
-
-
-def set_subpanel_value_dbl(subpanel_label,control_label,number):
-    logging.info(f"Sending request for value update of control named {control_label}")
-    number = f"{number}"
-    json = '{"message":"setSubpanelValueDBL","payload":{"subpanel":"' + subpanel_label + '","control":"' + control_label + '","value":'+ number +'}}'
-    socket.send(json.encode())
-
-    #  Get the reply.
-    message = socket.recv()
-    if("Value set !" == message.decode("utf-8")):
-        logging.info(f"Update successful !")
-    else:
-        logging.info(f"Something went wrong with the update...")
-
-
-
-
-
-
-def click_on_button(control_label):
+def FMV_click_on_button(control_label):
     logging.info(f"Send request to click on control named {control_label}.")
     json = '{"message":"click","payload":"'+ control_label +'"}'
     socket.send(json.encode())
@@ -91,7 +35,7 @@ def click_on_button(control_label):
     message = socket.recv()
     return message.decode("utf-8") == "clicked"
 
-def get_value(control_label):
+def FMV_get_value(control_label):
     logging.info(f"Sending request for value of control named {control_label}")
     json = '{"message":"getValue","payload":"'+ control_label + '"}'
     socket.send(json.encode())
@@ -102,25 +46,16 @@ def get_value(control_label):
 
     return data
 
-def get_value_dbl(control_label):
-    double_string = get_value(control_label)
+def FMV_get_value_DBL(control_label):
+    double_string = FMV_get_value(control_label)
     result_double = float(double_string)
     return result_double
 
+def FMV_get_value_bool(control_label):
+    bool_string = FMV_get_value(control_label)
+    return bool_string == "TRUE"
 
-def get_value_bool(control_label):
-    logging.info(f"Sending request for value of the bool control named {control_label}")
-    json = '{"message":"getValue","payload":"'+ control_label + '"}'
-    socket.send(json.encode())
-
-    #  Get the reply.
-    message = socket.recv()
-
-    data = message.decode("utf-8").split('=')[1]
-
-    return data == "TRUE"
-
-def set_value_dbl(control_label,number):
+def FMV_set_value_DBL(control_label,number):
     logging.info(f"Sending request for value update of control named {control_label}")
     number = f"{number}"
     json = '{"message":"setValueDBL","payload":{"name":"' + control_label + '","value":'+ number +'}}'
@@ -133,3 +68,56 @@ def set_value_dbl(control_label,number):
     else:
         logging.info(f"Something went wrong with the update...")
 
+# All methods related to the Sub Panel :
+
+def SP_get_vi_name(subpanel_label):
+    logging.info("Send request for subpanel VI.")
+    json = '{"message":"subpanel","payload":"' + subpanel_label + '"}'
+    socket.send(json.encode())
+
+    #  Get the reply.
+    message = socket.recv()
+    subpanel_vi = message.decode("utf-8")
+    logging.info(f"VI in subpanel is {subpanel_vi}")
+    return  subpanel_vi
+
+def SP_click_on_button(subpanel_label,control_label):
+    logging.info(f"Send request to click on control named {control_label}.")
+    json = '{"message":"SP_click","payload":{"subpanel":"' + subpanel_label + '","control":"'+ control_label +'"}}'
+    socket.send(json.encode())
+
+    #  Get the reply.
+    message = socket.recv()
+    return message.decode("utf-8") == "clicked"
+
+def SP_get_value(subpanel_label,control_label):
+    logging.info("Send request for subpanel VI.")
+    json = '{"message":"getSubpanelValue","payload":{"subpanel":"' + subpanel_label + '","control":"'+ control_label +'"}}'
+    socket.send(json.encode())
+
+    #  Get the reply.
+    message = socket.recv()
+    data = message.decode("utf-8").split('=')[1]
+    return  data
+
+def SP_get_value_DBL(subpanel_label,control_label):
+    double_string = SP_get_value(subpanel_label, control_label)
+    result_double = float(double_string)
+    return result_double
+
+def SP_get_value_bool(subpanel_label,control_label):
+    bool_string = SP_get_value(subpanel_label, control_label)
+    return bool_string == "TRUE"
+
+def SP_set_value_DBL(subpanel_label,control_label,number):
+    logging.info(f"Sending request for value update of control named {control_label}")
+    number = f"{number}"
+    json = '{"message":"setSubpanelValueDBL","payload":{"subpanel":"' + subpanel_label + '","control":"' + control_label + '","value":'+ number +'}}'
+    socket.send(json.encode())
+
+    #  Get the reply.
+    message = socket.recv()
+    if("Value set !" == message.decode("utf-8")):
+        logging.info(f"Update successful !")
+    else:
+        logging.info(f"Something went wrong with the update...")
