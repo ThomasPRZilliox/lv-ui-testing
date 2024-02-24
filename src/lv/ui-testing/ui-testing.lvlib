@@ -9,36 +9,37 @@
 </Property>
 	<Item Name="methods" Type="Folder">
 		<Item Name="private" Type="Folder">
-			<Item Name="gui" Type="Folder">
-				<Item Name="click on control.vi" Type="VI" URL="../ui-testing/click on control.vi"/>
-			</Item>
 			<Item Name="zmq handler" Type="Folder">
-				<Item Name="Front Most Vi" Type="Folder">
-					<Item Name="FMV - click.vi" Type="VI" URL="../ui-testing/FMV - click.vi"/>
-					<Item Name="FMV - set value DBL.vi" Type="VI" URL="../ui-testing/FMV - set value DBL.vi"/>
-				</Item>
+				<Property Name="NI.SortType" Type="Int">3</Property>
 				<Item Name="low level" Type="Folder">
-					<Item Name="click.vi" Type="VI" URL="../ui-testing/click.vi"/>
-					<Item Name="set value DBL.vi" Type="VI" URL="../set value DBL.vi"/>
+					<Item Name="gui" Type="Folder">
+						<Item Name="FMV - click on control.vi" Type="VI" URL="../FMV - click on control.vi"/>
+						<Item Name="SP - click on ctrl.vi" Type="VI" URL="../SP - click on ctrl.vi"/>
+					</Item>
+					<Item Name="value" Type="Folder">
+						<Item Name="set value DBL.vi" Type="VI" URL="../set value DBL.vi"/>
+					</Item>
+				</Item>
+				<Item Name="Front Most Vi" Type="Folder">
+					<Item Name="FMV - get value.vi" Type="VI" URL="../FMV - get value.vi"/>
+					<Item Name="FMV - click.vi" Type="VI" URL="../FMV - click.vi"/>
+					<Item Name="FMV - set value DBL.vi" Type="VI" URL="../FMV - set value DBL.vi"/>
 				</Item>
 				<Item Name="SubPanel" Type="Folder">
-					<Item Name="SP - click.vi" Type="VI" URL="../ui-testing/SP - click.vi"/>
-					<Item Name="SP - get value.vi" Type="VI" URL="../ui-testing/SP - get value.vi"/>
-					<Item Name="SP - set value DBL.vi" Type="VI" URL="../ui-testing/SP - set value DBL.vi"/>
+					<Item Name="SP - click.vi" Type="VI" URL="../SP - click.vi"/>
+					<Item Name="SP - get value.vi" Type="VI" URL="../SP - get value.vi"/>
+					<Item Name="SP - set value DBL.vi" Type="VI" URL="../SP - set value DBL.vi"/>
+					<Item Name="SP - Get current VI name.vi" Type="VI" URL="../SP - Get current VI name.vi"/>
 				</Item>
-				<Item Name="get value.vi" Type="VI" URL="../ui-testing/get value.vi"/>
-				<Item Name="subpanel.vi" Type="VI" URL="../ui-testing/subpanel.vi"/>
 			</Item>
 		</Item>
 		<Item Name="public" Type="Folder">
-			<Item Name="main.vi" Type="VI" URL="../ui-testing/main.vi"/>
-			<Item Name="send stop.vi" Type="VI" URL="../ui-testing/send stop.vi"/>
+			<Item Name="main.vi" Type="VI" URL="../main.vi"/>
+			<Item Name="send stop.vi" Type="VI" URL="../send stop.vi"/>
 			<Item Name="start daemon.vi" Type="VI" URL="../start daemon.vi"/>
 		</Item>
 	</Item>
 	<Item Name="typedef" Type="Folder">
-		<Item Name="message.ctl" Type="VI" URL="../ui-testing/message.ctl"/>
+		<Item Name="message.ctl" Type="VI" URL="../message.ctl"/>
 	</Item>
-	<Item Name="SP - low click.vi" Type="VI" URL="../ui-testing/SP - low click.vi"/>
-	<Item Name="SP click on control.vi" Type="VI" URL="../ui-testing/SP click on control.vi"/>
 </Library>

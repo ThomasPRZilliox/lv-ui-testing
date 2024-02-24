@@ -11,21 +11,13 @@
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
 		<Item Name="Example" Type="Folder">
-			<Item Name="example 1 - plot.vi" Type="VI" URL="../ui-testing/example 1 - plot.vi"/>
-			<Item Name="example 2 - value.vi" Type="VI" URL="../ui-testing/example 2 - value.vi"/>
-			<Item Name="example 3 - subpanel.vi" Type="VI" URL="../ui-testing/example 3 - subpanel.vi"/>
-			<Item Name="example 3 - subpanel1.vi" Type="VI" URL="../ui-testing/example 3 - subpanel1.vi"/>
-			<Item Name="example 3 - subpanel2.vi" Type="VI" URL="../ui-testing/example 3 - subpanel2.vi"/>
+			<Item Name="example 1 - plot.vi" Type="VI" URL="../examples/example 1 - plot.vi"/>
+			<Item Name="example 2 - value.vi" Type="VI" URL="../examples/example 2 - value.vi"/>
+			<Item Name="example 3 - subpanel.vi" Type="VI" URL="../examples/example 3 - subpanel.vi"/>
+			<Item Name="example 3 - subpanel1.vi" Type="VI" URL="../examples/example 3 - subpanel1.vi"/>
+			<Item Name="example 3 - subpanel2.vi" Type="VI" URL="../examples/example 3 - subpanel2.vi"/>
 		</Item>
-		<Item Name="test" Type="Folder">
-			<Item Name="test-0mq.vi" Type="VI" URL="../test-0mq.vi"/>
-			<Item Name="test-popup.vi" Type="VI" URL="../test-popup.vi"/>
-			<Item Name="win1.vi" Type="VI" URL="../win1.vi"/>
-			<Item Name="win2.vi" Type="VI" URL="../win2.vi"/>
-		</Item>
-		<Item Name="test - click.vi" Type="VI" URL="../ui-testing/test - click.vi"/>
-		<Item Name="test - click2.vi" Type="VI" URL="../ui-testing/test - click2.vi"/>
-		<Item Name="ui-testing.lvlib" Type="Library" URL="../ui-testing.lvlib"/>
+		<Item Name="ui-testing.lvlib" Type="Library" URL="../ui-testing/ui-testing.lvlib"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="user.lib" Type="Folder">
 				<Item Name="Anything to String.vi" Type="VI" URL="/&lt;userlib&gt;/_MGI/File/Anything to String.vi"/>
@@ -55,7 +47,6 @@
 				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Cluster From Error Code.vi"/>
 				<Item Name="Error Code Database.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Code Database.vi"/>
 				<Item Name="ErrWarn.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/ErrWarn.ctl"/>
-				<Item Name="eventsource.ctl" Type="VI" URL="/&lt;vilib&gt;/event_ctls.llb/eventsource.ctl"/>
 				<Item Name="eventvkey.ctl" Type="VI" URL="/&lt;vilib&gt;/event_ctls.llb/eventvkey.ctl"/>
 				<Item Name="Find Tag.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Find Tag.vi"/>
 				<Item Name="Format Message String.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Format Message String.vi"/>
@@ -68,8 +59,6 @@
 				<Item Name="Longest Line Length in Pixels.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Longest Line Length in Pixels.vi"/>
 				<Item Name="LVBoundsTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVBoundsTypeDef.ctl"/>
 				<Item Name="LVNumericRepresentation.ctl" Type="VI" URL="/&lt;vilib&gt;/numeric/LVNumericRepresentation.ctl"/>
-				<Item Name="LVPointTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVPointTypeDef.ctl"/>
-				<Item Name="LVPositionTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVPositionTypeDef.ctl"/>
 				<Item Name="LVRectTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVRectTypeDef.ctl"/>
 				<Item Name="NI_FileType.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/lvfile.llb/NI_FileType.lvlib"/>
 				<Item Name="NI_PackedLibraryUtility.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/LVLibp/NI_PackedLibraryUtility.lvlib"/>
