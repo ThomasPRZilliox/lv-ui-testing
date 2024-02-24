@@ -17,7 +17,7 @@ socket.connect("tcp://localhost:5555")
 
 def FMV_get_vi_name():
     logging.info("Send request for front most VI.")
-    json = '{"message":"frontMostVi"}'
+    json = '{"message":"FMV_get_vi_name"}'
     socket.send(json.encode())
 
     #  Get the reply.
@@ -28,7 +28,7 @@ def FMV_get_vi_name():
 
 def FMV_click_on_button(control_label):
     logging.info(f"Send request to click on control named {control_label}.")
-    json = '{"message":"click","payload":"'+ control_label +'"}'
+    json = '{"message":"FMV_click_on_button","payload":"'+ control_label +'"}'
     socket.send(json.encode())
 
     #  Get the reply.
@@ -37,7 +37,7 @@ def FMV_click_on_button(control_label):
 
 def FMV_get_value(control_label):
     logging.info(f"Sending request for value of control named {control_label}")
-    json = '{"message":"getValue","payload":"'+ control_label + '"}'
+    json = '{"message":"FMV_get_value","payload":"'+ control_label + '"}'
     socket.send(json.encode())
 
     #  Get the reply.
@@ -58,7 +58,7 @@ def FMV_get_value_bool(control_label):
 def FMV_set_value_DBL(control_label,number):
     logging.info(f"Sending request for value update of control named {control_label}")
     number = f"{number}"
-    json = '{"message":"setValueDBL","payload":{"name":"' + control_label + '","value":'+ number +'}}'
+    json = '{"message":"FMV_set_value_DBL","payload":{"name":"' + control_label + '","value":'+ number +'}}'
     socket.send(json.encode())
 
     #  Get the reply.
@@ -72,7 +72,7 @@ def FMV_set_value_DBL(control_label,number):
 
 def SP_get_vi_name(subpanel_label):
     logging.info("Send request for subpanel VI.")
-    json = '{"message":"subpanel","payload":"' + subpanel_label + '"}'
+    json = '{"message":"SP_get_vi_name","payload":"' + subpanel_label + '"}'
     socket.send(json.encode())
 
     #  Get the reply.
@@ -83,7 +83,7 @@ def SP_get_vi_name(subpanel_label):
 
 def SP_click_on_button(subpanel_label,control_label):
     logging.info(f"Send request to click on control named {control_label}.")
-    json = '{"message":"SP_click","payload":{"subpanel":"' + subpanel_label + '","control":"'+ control_label +'"}}'
+    json = '{"message":"SP_click_on_button","payload":{"subpanel":"' + subpanel_label + '","control":"'+ control_label +'"}}'
     socket.send(json.encode())
 
     #  Get the reply.
@@ -92,7 +92,7 @@ def SP_click_on_button(subpanel_label,control_label):
 
 def SP_get_value(subpanel_label,control_label):
     logging.info("Send request for subpanel VI.")
-    json = '{"message":"getSubpanelValue","payload":{"subpanel":"' + subpanel_label + '","control":"'+ control_label +'"}}'
+    json = '{"message":"SP_get_value","payload":{"subpanel":"' + subpanel_label + '","control":"'+ control_label +'"}}'
     socket.send(json.encode())
 
     #  Get the reply.
@@ -112,7 +112,7 @@ def SP_get_value_bool(subpanel_label,control_label):
 def SP_set_value_DBL(subpanel_label,control_label,number):
     logging.info(f"Sending request for value update of control named {control_label}")
     number = f"{number}"
-    json = '{"message":"setSubpanelValueDBL","payload":{"subpanel":"' + subpanel_label + '","control":"' + control_label + '","value":'+ number +'}}'
+    json = '{"message":"SP_set_value_DBL","payload":{"subpanel":"' + subpanel_label + '","control":"' + control_label + '","value":'+ number +'}}'
     socket.send(json.encode())
 
     #  Get the reply.
