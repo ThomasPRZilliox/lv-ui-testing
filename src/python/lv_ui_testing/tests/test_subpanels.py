@@ -1,5 +1,4 @@
 # Start the VI "example 1 - Plot" first then run that script
-from lv_ui_testing import  lv_ui_testing
 import pytest
 
 def test_front_most_vi():

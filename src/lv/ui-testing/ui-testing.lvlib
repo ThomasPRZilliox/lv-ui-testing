@@ -9,6 +9,7 @@
 </Property>
 	<Item Name="methods" Type="Folder">
 		<Item Name="private" Type="Folder">
+			<Property Name="NI.LibItem.Scope" Type="Int">2</Property>
 			<Item Name="zmq handler" Type="Folder">
 				<Property Name="NI.SortType" Type="Int">3</Property>
 				<Item Name="low level" Type="Folder">
@@ -32,10 +33,11 @@
 					<Item Name="SP - Get current VI name.vi" Type="VI" URL="../SP - Get current VI name.vi"/>
 				</Item>
 			</Item>
-		</Item>
-		<Item Name="public" Type="Folder">
 			<Item Name="main.vi" Type="VI" URL="../main.vi"/>
 			<Item Name="send stop.vi" Type="VI" URL="../send stop.vi"/>
+		</Item>
+		<Item Name="public" Type="Folder">
+			<Property Name="NI.LibItem.Scope" Type="Int">1</Property>
 			<Item Name="start daemon.vi" Type="VI" URL="../start daemon.vi"/>
 		</Item>
 	</Item>
