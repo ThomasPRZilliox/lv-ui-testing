@@ -1,5 +1,5 @@
 # Start the VI "example 3 - subplot" first then run that script
-from lv_ui_testing import  ui_testing
+from lv_ui_testing import  lv_ui_testing
 import time
 
 # Ask the tester daemon what is the front most VI
