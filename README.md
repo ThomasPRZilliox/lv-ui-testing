@@ -4,29 +4,68 @@ The aim of this project is:
 1. test several UI scrapping tools available and check if some can be used with a LabVIEW application. 
 2. Make a framework (first in Python) to script some user interface testing
 
-# UI scrapping tools
+# Powered by
 
-## To test
+[![LabVIEW][LabVIEW]][LabVIEW-url]
+[![Python][Python]][Python-url]
+[![PythonTest][PythonTest]][PythonTest-url]
+[![0MQ][0MQ]][0MQ-url]
 
-### Microsoft's UI Automation framework 
+[LabVIEW]: https://img.shields.io/badge/labview-000000?style=for-the-badge&logo=labview&logoColor=white
+[LabVIEW-url]: https://www.ni.com/fr/support/downloads/software-products/download.labview.html
 
-C# provides support for UI Automation through the System.Windows.Automation
+[Python]:https://img.shields.io/badge/python-000000?style=for-the-badge&logo=python&logoColor=white
+[Python-url]:https://www.python.org/
 
-### WinAppDriver
+[PythonTest]:https://img.shields.io/badge/pytest-000000?style=for-the-badge&logo=pytest&logoColor=white
+[PythonTest-url]:https://docs.pytest.org/
 
-* [Windows Doc](https://techcommunity.microsoft.com/t5/testingspot-blog/winappdriver-and-desktop-ui-test-automation/ba-p/1124543)
-* [GitHub](https://github.com/microsoft/WinAppDriver)
+[0MQ]:https://img.shields.io/badge/Ømq-000000?style=for-the-badge&logo=0mq&logoColor=white
+[0MQ-url]:https://zeromq.org/
 
-## Tested
+# How does it work ?
+
+## LabVIEW
+
+![](./doc/lv-architecture.drawio.png)
+
+The UI test dameon is launched from one VI called "[start daemon.vi](./src/lv/ui-testing/start%20daemon.vi)". This daemon will start a 0MQ server that will waits for request from any script. The daemon logic is used to convert the command from the client to UI methods such as clicking on a button or getting/setting a value for example. 
+
+## Python
+
+The python package will create a 0MQ client when called and will send the different request to the LabVIEW application. The idea is to used  PyTest to write the different UI test but the package can be used in any custom way.
+
+# License
+
+Distributed under the MIT License. See [LICENSE.txt](./LICENSE.txt) for more information. Copyrights Thomas Zilliox and others.
+
+# Roadmap
+
+## 1.2.0
+
+* Support of the webview2 control handling
+
+## 1.1.0
+
+* Support of the path control handling
+* Support of the string control handling
+    * Set the value directly similarly of the double control in 1.0.0
+    * Simulate a user typing
 
 
-
-# Framework
 
 ## 1.0.0
 
-* A subVI call "UI-Tester.vi" need to be added to top level VI. This subVI will encapsulate all the logic needed.
-* A python package is made to encapsulate some generic commands
-    * front-most : Return the frontmost Window 
-    * click-btn : Click on a specific button based on its label on the frontmost Window
-    * grab : Get the data/value of a specific object based on its label
+* A VI call "[start daemon.vi](./src/lv/ui-testing/start%20daemon.vi)" need to be added to top level VI. This subVI will encapsulate all the logic needed.
+* A python package called "[lv_ui_testing](./src/python/lv_ui_testing/)" is made to encapsulate some generic commands
+* The commands are as follow:
+    * Front Most VI
+        * Click on button
+        * Get value of a control
+        * Get VI name
+        * Set DBL value of a control
+    * Subpanel
+        * Click on button
+        * Get value of a control
+        * Get VI name currently displayed in the subpanel
+        * Set DBL value of a control
