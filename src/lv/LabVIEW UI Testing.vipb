@@ -1,9 +1,9 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2024-02-25 11:29:35" Modified_Date="2024-02-25 11:57:08" Creator="Thomas" Comments="" ID="3f4364e35a142f20df18a8358eea1cce">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2024-02-25 11:29:35" Modified_Date="2024-05-23 15:14:23" Creator="Thomas" Comments="" ID="767f18ffbc2a7b5f120d9552c52744f3">
   <Library_General_Settings>
     <Package_File_Name>Thomas_Zilliox_lib_LabVIEW_UI_Testing</Package_File_Name>
-    <Library_Version>0.1.0.6</Library_Version>
+    <Library_Version>1.0.0.7</Library_Version>
     <Auto_Increment_Version>false</Auto_Increment_Version>
-    <Library_Source_Folder>..\..\..\..\Git_Repos\lv-ui-testing\src\lv\ui-testing</Library_Source_Folder>
+    <Library_Source_Folder>ui-testing</Library_Source_Folder>
     <Library_Output_Folder>.</Library_Output_Folder>
     <Company_Name>Thomas Zilliox</Company_Name>
     <Library_Summary/>
@@ -29,7 +29,12 @@
     <Description>
       <One_Line_Description_Summary/>
       <Description>The aim of that package is to create LabVIEW User Interface testing through scripts through pyTest.
-The required python package is : pip install lv-ui-testing</Description>
+
+The required python package is : 
+pip install lv-ui-testing
+
+For more details and example explore the wiki:
+https://github.com/ThomasPRZilliox/lv-ui-testing/wiki</Description>
       <Copyright/>
       <Packager/>
       <URL/>
@@ -214,10 +219,10 @@ The required python package is : pip install lv-ui-testing</Description>
           <Column>1</Column>
         </Position>
         <Icon>00000000</Icon>
-        <Path>..\..\..\..\Git_Repos\lv-ui-testing\src\lv\ui-testing\start daemon.vi</Path>
+        <Path>ui-testing\start daemon.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>75B331B61D50A159691CF5F5992B9138</GUID>
+      <GUID>8BB43A61A8164263E586C8A219C8693C</GUID>
     </Functions_Palette_Data>
     <Controls_Palette_Data>
       <Parent_Palette_Index>-1</Parent_Palette_Index>
@@ -249,10 +254,10 @@ The required python package is : pip install lv-ui-testing</Description>
           <Column>1</Column>
         </Position>
         <Icon>00000000</Icon>
-        <Path>..\..\..\..\Git_Repos\lv-ui-testing\src\lv\ui-testing\message.ctl</Path>
+        <Path>ui-testing\message.ctl</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>FD1785F2738E15378BA6FBA14CF009C2</GUID>
+      <GUID>1D57D407D645BC76F79195DB259C6CCC</GUID>
     </Controls_Palette_Data>
   </Library_Palette_Definition>
 </VI_Package_Builder_Settings>
