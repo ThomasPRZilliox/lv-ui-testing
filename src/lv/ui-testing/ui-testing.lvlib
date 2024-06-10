@@ -19,11 +19,14 @@
 						<Item Name="SP - click on ctrl.vi" Type="VI" URL="../SP - click on ctrl.vi"/>
 					</Item>
 					<Item Name="value" Type="Folder">
+						<Item Name="set value array STR.vi" Type="VI" URL="../set value array STR.vi"/>
+						<Item Name="set value STR.vi" Type="VI" URL="../set value STR.vi"/>
 						<Item Name="set value DBL.vi" Type="VI" URL="../set value DBL.vi"/>
 					</Item>
-					<Item Name="set value array STR.vi" Type="VI" URL="../set value array STR.vi"/>
-					<Item Name="SP SP - get ctrl.vi" Type="VI" URL="../SP SP - get ctrl.vi"/>
-					<Item Name="set value STR.vi" Type="VI" URL="../set value STR.vi"/>
+					<Item Name="reference" Type="Folder">
+						<Item Name="SP SP - get ctrl.vi" Type="VI" URL="../SP SP - get ctrl.vi"/>
+						<Item Name="SP - get subpanel ref.vi" Type="VI" URL="../SP - get subpanel ref.vi"/>
+					</Item>
 				</Item>
 				<Item Name="Front Most Vi" Type="Folder">
 					<Item Name="FMV - set value array STR.vi" Type="VI" URL="../FMV - set value array STR.vi"/>
