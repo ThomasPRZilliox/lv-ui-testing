@@ -41,14 +41,23 @@ Distributed under the MIT License. See [LICENSE.txt](./LICENSE.txt) for more inf
 
 # Roadmap
 
-## 1.2.0
+## 2.0.0
 
 * Support of the webview2 control handling
+* Support of the path control handling
+
+## 1.2.0
+
+* Support for sub-subpanel
 
 ## 1.1.0
 
-* Support of the path control handling
+
 * Support of the string control handling
+    * Set the value directly similarly of the double control in 1.0.0
+    * Simulate a user typing
+
+* Support of the array string control handling (such as tree with multiple inputs)
     * Set the value directly similarly of the double control in 1.0.0
     * Simulate a user typing
 

@@ -1,7 +1,7 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2024-02-25 11:29:35" Modified_Date="2024-05-23 15:14:23" Creator="Thomas" Comments="" ID="767f18ffbc2a7b5f120d9552c52744f3">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2024-02-25 11:29:35" Modified_Date="2024-06-04 18:09:02" Creator="Thomas" Comments="" ID="2830df92f466ec25874cef03fb68418a">
   <Library_General_Settings>
     <Package_File_Name>Thomas_Zilliox_lib_LabVIEW_UI_Testing</Package_File_Name>
-    <Library_Version>1.0.0.7</Library_Version>
+    <Library_Version>1.1.1.9</Library_Version>
     <Auto_Increment_Version>false</Auto_Increment_Version>
     <Library_Source_Folder>ui-testing</Library_Source_Folder>
     <Library_Output_Folder>.</Library_Output_Folder>
@@ -38,7 +38,7 @@ https://github.com/ThomasPRZilliox/lv-ui-testing/wiki</Description>
       <Copyright/>
       <Packager/>
       <URL/>
-      <Release_Notes/>
+      <Release_Notes>Methods to support reading of array of string controls (such as tree with multiple selection) and update of string controls as well as string arrays controls (including tree)</Release_Notes>
     </Description>
     <Destinations>
       <Toolkit_VIs>
@@ -222,7 +222,7 @@ https://github.com/ThomasPRZilliox/lv-ui-testing/wiki</Description>
         <Path>ui-testing\start daemon.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>8BB43A61A8164263E586C8A219C8693C</GUID>
+      <GUID>4C34D86E1A45F04FE3FF9C91DEA0E47F</GUID>
     </Functions_Palette_Data>
     <Controls_Palette_Data>
       <Parent_Palette_Index>-1</Parent_Palette_Index>
@@ -257,7 +257,7 @@ https://github.com/ThomasPRZilliox/lv-ui-testing/wiki</Description>
         <Path>ui-testing\message.ctl</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>1D57D407D645BC76F79195DB259C6CCC</GUID>
+      <GUID>FF2A422C08CF1E5A881C9B9FA6CC8A08</GUID>
     </Controls_Palette_Data>
   </Library_Palette_Definition>
 </VI_Package_Builder_Settings>

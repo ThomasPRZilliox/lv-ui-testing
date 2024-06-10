@@ -1,5 +1,6 @@
 import zmq
 import logging
+import json
 
 # Configure logging
 logging.basicConfig(format='%(asctime)s - %(message)s', datefmt='%Y-%m-%d %H:%M:%S', level=logging.INFO)
@@ -11,6 +12,16 @@ context = zmq.Context()
 print("Connecting to LabVIEW server…")
 socket = context.socket(zmq.REQ)
 socket.connect("tcp://localhost:5555")
+
+# All the methods for the communication
+
+def decode_value_update(socket):
+    #  Get the reply.
+    message = socket.recv()
+    if("Value set !" == message.decode("utf-8")):
+        logging.info(f"Update successful !")
+    else:
+        logging.info(f"Something went wrong with the update...")
 
 
 # All methods related to the Front Most Vis
@@ -46,6 +57,26 @@ def FMV_get_value(control_label):
 
     return data
 
+def decode_tree(message):
+    data = message.decode("utf-8").split("Tree")[2:]  # To remove the space before the first tree word and the tree size
+
+    selected_tree_element = []
+    for element in data:
+        selected_tree_element.append(element.split("=")[1])
+
+    return selected_tree_element
+
+def FMV_get_value_TREE(control_label):
+    logging.info(f"Sending request for value of control named {control_label}")
+    json = '{"message":"FMV_get_value","payload":"'+ control_label + '"}'
+    socket.send(json.encode())
+
+    #  Get the reply.
+    message = socket.recv()
+    selected_tree_element = decode_tree(message)
+
+    return selected_tree_element
+
 def FMV_get_value_DBL(control_label):
     double_string = FMV_get_value(control_label)
     result_double = float(double_string)
@@ -60,13 +91,22 @@ def FMV_set_value_DBL(control_label,number):
     number = f"{number}"
     json = '{"message":"FMV_set_value_DBL","payload":{"name":"' + control_label + '","value":'+ number +'}}'
     socket.send(json.encode())
+    decode_value_update(socket)
 
-    #  Get the reply.
-    message = socket.recv()
-    if("Value set !" == message.decode("utf-8")):
-        logging.info(f"Update successful !")
-    else:
-        logging.info(f"Something went wrong with the update...")
+def FMV_set_value_STR(control_label,text):
+    logging.info(f"Sending request for value update of control named {control_label}")
+    json = '{"message":"FMV_set_value_STR","payload":{"name":"' + control_label + '","value":"'+ text +'"}}'
+    socket.send(json.encode())
+    decode_value_update(socket)
+
+def FMV_set_value_ARR_STR(control_label,text):
+    logging.info(f"Sending request for value update of control named {control_label}")
+    # json = '{"message":"FMV_set_value_ARR_STR","payload":{"name":"' + control_label + '","value":"'+ text +'"}}'
+    data = {"message":"FMV_set_value_ARR_STR","payload":{"name":control_label,"value": text }}
+    data_json = json.dumps(data)
+    socket.send(data_json.encode())
+    decode_value_update(socket)
+
 
 # All methods related to the Sub Panel :
 
@@ -100,6 +140,17 @@ def SP_get_value(subpanel_label,control_label):
     data = message.decode("utf-8").split('=')[1]
     return  data
 
+def SP_get_value_TREE(subpanel_label,control_label):
+    logging.info(f"Sending request for subpanel VI for value of control named {control_label}")
+    json = '{"message":"SP_get_value","payload":{"subpanel":"' + subpanel_label + '","control":"'+ control_label +'"}}'
+    socket.send(json.encode())
+
+    #  Get the reply.
+    message = socket.recv()
+    selected_tree_element = decode_tree(message)
+
+    return selected_tree_element
+
 def SP_get_value_DBL(subpanel_label,control_label):
     double_string = SP_get_value(subpanel_label, control_label)
     result_double = float(double_string)
@@ -114,10 +165,85 @@ def SP_set_value_DBL(subpanel_label,control_label,number):
     number = f"{number}"
     json = '{"message":"SP_set_value_DBL","payload":{"subpanel":"' + subpanel_label + '","control":"' + control_label + '","value":'+ number +'}}'
     socket.send(json.encode())
+    decode_value_update(socket)
+
+
+
+def SP_set_value_STR(subpanel_label,control_label,text):
+    logging.info(f"Sending request for value update of control named {control_label}")
+    json = '{"message":"SP_set_value_STR","payload":{"subpanel":"' + subpanel_label + '","control":"' + control_label + '","value":' + text + '}}'
+    socket.send(json.encode())
+    decode_value_update(socket)
+
+
+def SP_set_value_ARR_STR(subpanel_label,control_label,text):
+    logging.info(f"Sending request for value update of control named {control_label}")
+    data = {"message":"SP_set_value_ARR_STR","payload":{"subpanel": subpanel_label ,"control": control_label ,"value": text }}
+    data_json = json.dumps(data)
+    socket.send(data_json.encode())
+    decode_value_update(socket)
+
+def SP_SP_click_on_button(subpanel_label,subsubpanel_label,control_label):
+    logging.info(f"Send request to click on control named {control_label}.")
+    json = '{"message":"SP_SP_click_on_button","payload":{"subpanel":"' + subpanel_label + '", "subsubpanel":"' + subsubpanel_label + '","control":"'+ control_label +'"}}'
+    socket.send(json.encode())
 
     #  Get the reply.
     message = socket.recv()
-    if("Value set !" == message.decode("utf-8")):
-        logging.info(f"Update successful !")
-    else:
-        logging.info(f"Something went wrong with the update...")
+    return message.decode("utf-8") == "clicked"
+
+
+def SP_SP_get_value(subpanel_label,subsubpanel_label,control_label):
+    logging.info("Send request for subpanel VI.")
+    json = '{"message":"SP_SP_get_value","payload":{"subpanel":"' + subpanel_label + '","subsubpanel":"' + subsubpanel_label + '","control":"'+ control_label +'"}}'
+    socket.send(json.encode())
+
+    #  Get the reply.
+    message = socket.recv()
+    data = message.decode("utf-8").split('=')[1]
+    return  data
+
+
+def SP_SP_set_value_DBL(subpanel_label,subsubpanel_label,control_label,value):
+    logging.info(f"Sending request for value update of control named {control_label}")
+    data = {"message":"SP_SP_set_value_DBL","payload":{"subpanel": subpanel_label, "subsubpanel":subsubpanel_label ,"control": control_label ,"value": value }}
+    data_json = json.dumps(data)
+    socket.send(data_json.encode())
+    decode_value_update(socket)
+
+def SP_SP_set_value_STR(subpanel_label,subsubpanel_label,control_label,value):
+    logging.info(f"Sending request for value update of control named {control_label}")
+    data = {"message":"SP_SP_set_value_STR","payload":{"subpanel": subpanel_label, "subsubpanel":subsubpanel_label ,"control": control_label ,"value": value }}
+    data_json = json.dumps(data)
+    socket.send(data_json.encode())
+    decode_value_update(socket)
+
+def SP_SP_set_value_ARR_STR(subpanel_label,control_label,text):
+    logging.info(f"Sending request for value update of control named {control_label}")
+    data = {"message":"SP_SP_set_value_ARR_STR","payload":{"subpanel": subpanel_label ,"control": control_label ,"value": text }}
+    data_json = json.dumps(data)
+    socket.send(data_json.encode())
+    decode_value_update(socket)
+
+def SP_SP_get_value_TREE(subpanel_label,control_label):
+    logging.info(f"Sending request for subpanel VI for value of control named {control_label}")
+    data = {"message": "SP_SP_get_value",
+            "payload": {"subpanel": subpanel_label, "subsubpanel": subsubpanel_label, "control": control_label}}
+    data_json = json.dumps(data)
+    socket.send(data_json.encode())
+
+    #  Get the reply.
+    message = socket.recv()
+    selected_tree_element = decode_tree(message)
+
+    return selected_tree_element
+
+def SP_SP_get_value_DBL(subpanel_label,control_label):
+    double_string = SP_SP_get_value(subpanel_label, control_label)
+    result_double = float(double_string)
+    return result_double
+
+def SP_SP_get_value_bool(subpanel_label,control_label):
+    bool_string = SP_SP_get_value(subpanel_label, control_label)
+    return bool_string == "TRUE"
+

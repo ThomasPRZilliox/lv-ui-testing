@@ -1,6 +1,6 @@
 [project]
 name = "lv_ui_testing"
-version = "0.0.4"
+version = "1.0.3"
 authors = [
   { name="Thomas Zilliox", email="thomas.zilliox67@gmail.com" },
 ]
@@ -11,6 +11,10 @@ classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
+]
+
+dependencies = [
+    "pyzmq==26.0.3",
 ]
 
 [project.urls]

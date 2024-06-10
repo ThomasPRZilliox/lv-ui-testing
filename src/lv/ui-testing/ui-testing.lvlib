@@ -9,28 +9,43 @@
 </Property>
 	<Item Name="methods" Type="Folder">
 		<Item Name="private" Type="Folder">
-			<Property Name="NI.LibItem.Scope" Type="Int">2</Property>
+			<Property Name="NI.LibItem.Scope" Type="Int">1</Property>
 			<Item Name="zmq handler" Type="Folder">
 				<Property Name="NI.SortType" Type="Int">3</Property>
 				<Item Name="low level" Type="Folder">
 					<Item Name="gui" Type="Folder">
 						<Item Name="FMV - click on control.vi" Type="VI" URL="../FMV - click on control.vi"/>
+						<Item Name="SP SP - click on ctrl.vi" Type="VI" URL="../SP SP - click on ctrl.vi"/>
 						<Item Name="SP - click on ctrl.vi" Type="VI" URL="../SP - click on ctrl.vi"/>
 					</Item>
 					<Item Name="value" Type="Folder">
 						<Item Name="set value DBL.vi" Type="VI" URL="../set value DBL.vi"/>
 					</Item>
+					<Item Name="set value array STR.vi" Type="VI" URL="../set value array STR.vi"/>
+					<Item Name="SP SP - get ctrl.vi" Type="VI" URL="../SP SP - get ctrl.vi"/>
+					<Item Name="set value STR.vi" Type="VI" URL="../set value STR.vi"/>
 				</Item>
 				<Item Name="Front Most Vi" Type="Folder">
+					<Item Name="FMV - set value array STR.vi" Type="VI" URL="../FMV - set value array STR.vi"/>
+					<Item Name="FMV - set value STR.vi" Type="VI" URL="../FMV - set value STR.vi"/>
 					<Item Name="FMV - get value.vi" Type="VI" URL="../FMV - get value.vi"/>
 					<Item Name="FMV - click.vi" Type="VI" URL="../FMV - click.vi"/>
 					<Item Name="FMV - set value DBL.vi" Type="VI" URL="../FMV - set value DBL.vi"/>
 				</Item>
 				<Item Name="SubPanel" Type="Folder">
 					<Item Name="SP - click.vi" Type="VI" URL="../SP - click.vi"/>
+					<Item Name="SP - set value array STR.vi" Type="VI" URL="../SP - set value array STR.vi"/>
+					<Item Name="SP - set value STR.vi" Type="VI" URL="../SP - set value STR.vi"/>
 					<Item Name="SP - get value.vi" Type="VI" URL="../SP - get value.vi"/>
 					<Item Name="SP - set value DBL.vi" Type="VI" URL="../SP - set value DBL.vi"/>
 					<Item Name="SP - Get current VI name.vi" Type="VI" URL="../SP - Get current VI name.vi"/>
+				</Item>
+				<Item Name="SubSubPanel" Type="Folder">
+					<Item Name="SP SP - set value array STR.vi" Type="VI" URL="../SP SP - set value array STR.vi"/>
+					<Item Name="SP SP - set value STR.vi" Type="VI" URL="../SP SP - set value STR.vi"/>
+					<Item Name="SP SP - get value.vi" Type="VI" URL="../SP SP - get value.vi"/>
+					<Item Name="SP SP - set value DBL.vi" Type="VI" URL="../SP SP - set value DBL.vi"/>
+					<Item Name="SP SP - click.vi" Type="VI" URL="../SP SP - click.vi"/>
 				</Item>
 			</Item>
 			<Item Name="main.vi" Type="VI" URL="../main.vi"/>
