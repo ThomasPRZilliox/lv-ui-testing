@@ -218,14 +218,14 @@ def SP_SP_set_value_STR(subpanel_label,subsubpanel_label,control_label,value):
     socket.send(data_json.encode())
     decode_value_update(socket)
 
-def SP_SP_set_value_ARR_STR(subpanel_label,control_label,text):
+def SP_SP_set_value_ARR_STR(subpanel_label,subsubpanel_label,control_label,text):
     logging.info(f"Sending request for value update of control named {control_label}")
-    data = {"message":"SP_SP_set_value_ARR_STR","payload":{"subpanel": subpanel_label ,"control": control_label ,"value": text }}
+    data = {"message":"SP_SP_set_value_ARR_STR","payload":{"subpanel": subpanel_label, "subsubpanel":subsubpanel_label ,"control": control_label ,"value": text }}
     data_json = json.dumps(data)
     socket.send(data_json.encode())
     decode_value_update(socket)
 
-def SP_SP_get_value_TREE(subpanel_label,control_label):
+def SP_SP_get_value_TREE(subpanel_label,subsubpanel_label,control_label):
     logging.info(f"Sending request for subpanel VI for value of control named {control_label}")
     data = {"message": "SP_SP_get_value",
             "payload": {"subpanel": subpanel_label, "subsubpanel": subsubpanel_label, "control": control_label}}
@@ -238,12 +238,12 @@ def SP_SP_get_value_TREE(subpanel_label,control_label):
 
     return selected_tree_element
 
-def SP_SP_get_value_DBL(subpanel_label,control_label):
-    double_string = SP_SP_get_value(subpanel_label, control_label)
+def SP_SP_get_value_DBL(subpanel_label,subsubpanel_label,control_label):
+    double_string = SP_SP_get_value(subpanel_label,subsubpanel_label, control_label)
     result_double = float(double_string)
     return result_double
 
-def SP_SP_get_value_bool(subpanel_label,control_label):
-    bool_string = SP_SP_get_value(subpanel_label, control_label)
+def SP_SP_get_value_bool(subpanel_label,subsubpanel_label,control_label):
+    bool_string = SP_SP_get_value(subpanel_label,subsubpanel_label, control_label)
     return bool_string == "TRUE"
 
