@@ -21,10 +21,15 @@
 				<Item Name="example 5 - grand child.vi" Type="VI" URL="../ui-testing/example 5 - grand child.vi"/>
 				<Item Name="example 5 - parent.vi" Type="VI" URL="../ui-testing/example 5 - parent.vi"/>
 			</Item>
+			<Item Name="example 6" Type="Folder">
+				<Item Name="example 6 - child.vi" Type="VI" URL="../ui-testing/example 6 - child.vi"/>
+				<Item Name="example 6 - visibility.vi" Type="VI" URL="../ui-testing/example 6 - visibility.vi"/>
+			</Item>
 			<Item Name="example 1 - plot.vi" Type="VI" URL="../examples/example 1 - plot.vi"/>
 			<Item Name="example 2 - value.vi" Type="VI" URL="../examples/example 2 - value.vi"/>
 			<Item Name="example 4 - string.vi" Type="VI" URL="../examples/example 4 - string.vi"/>
 		</Item>
+		<Item Name="example 6 - grand child.vi" Type="VI" URL="../ui-testing/example 6 - grand child.vi"/>
 		<Item Name="ui-testing.lvlib" Type="Library" URL="../ui-testing/ui-testing.lvlib"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="user.lib" Type="Folder">

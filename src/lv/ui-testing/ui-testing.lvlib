@@ -28,6 +28,7 @@
 						<Item Name="SP - get subpanel ref.vi" Type="VI" URL="../SP - get subpanel ref.vi"/>
 						<Item Name="filter control reference.vi" Type="VI" URL="../filter control reference.vi"/>
 						<Item Name="filter and get control value.vi" Type="VI" URL="../filter and get control value.vi"/>
+						<Item Name="get all control details.vi" Type="VI" URL="../get all control details.vi"/>
 					</Item>
 				</Item>
 				<Item Name="Front Most Vi" Type="Folder">
@@ -36,6 +37,7 @@
 					<Item Name="FMV - get value.vi" Type="VI" URL="../FMV - get value.vi"/>
 					<Item Name="FMV - click.vi" Type="VI" URL="../FMV - click.vi"/>
 					<Item Name="FMV - set value DBL.vi" Type="VI" URL="../FMV - set value DBL.vi"/>
+					<Item Name="FMV - get control details.vi" Type="VI" URL="../FMV - get control details.vi"/>
 				</Item>
 				<Item Name="SubPanel" Type="Folder">
 					<Item Name="SP - click.vi" Type="VI" URL="../SP - click.vi"/>
@@ -64,4 +66,7 @@
 	<Item Name="typedef" Type="Folder">
 		<Item Name="message.ctl" Type="VI" URL="../message.ctl"/>
 	</Item>
+	<Item Name="SP - get control details.vi" Type="VI" URL="../SP - get control details.vi"/>
+	<Item Name="SP SP - get control details.vi" Type="VI" URL="../SP SP - get control details.vi"/>
+	<Item Name="SP SP - Get current VI name.vi" Type="VI" URL="../SP SP - Get current VI name.vi"/>
 </Library>

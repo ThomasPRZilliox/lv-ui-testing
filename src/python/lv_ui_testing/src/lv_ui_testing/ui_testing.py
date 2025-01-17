@@ -1,6 +1,7 @@
 import zmq
 import logging
 import json
+import xmltodict
 
 # Configure logging
 logging.basicConfig(format='%(asctime)s - %(message)s', datefmt='%Y-%m-%d %H:%M:%S', level=logging.INFO)
@@ -37,6 +38,18 @@ def FMV_get_vi_name():
     logging.info(f"Received reply {front_most_vi}")
     return  front_most_vi
 
+def FMV_get_control_details():
+    logging.info("Send request for front most VI.")
+    json_message = '{"message":"FMV_get_control_details"}'
+    socket.send(json_message.encode())
+
+    #  Get the reply.
+    message = socket.recv()
+    control_details = message.decode("utf-8")
+    # logging.info(f"Received reply {front_most_vi}")
+    control_details = json.loads(control_details)
+    return  control_details
+
 def FMV_click_on_button(control_label):
     logging.info(f"Send request to click on control named {control_label}.")
     json = '{"message":"FMV_click_on_button","payload":"'+ control_label +'"}'
@@ -46,14 +59,31 @@ def FMV_click_on_button(control_label):
     message = socket.recv()
     return message.decode("utf-8") == "clicked"
 
-def FMV_get_value(control_label):
+def FMV_get_value(control_label, raw = False):
     logging.info(f"Sending request for value of control named {control_label}")
     json = '{"message":"FMV_get_value","payload":"'+ control_label + '"}'
     socket.send(json.encode())
 
     #  Get the reply.
     message = socket.recv()
-    data = message.decode("utf-8").split('=')[1]
+    if raw:
+        data = message.decode("utf-8")
+    else:
+        data = message.decode("utf-8").split('=')[1]
+
+    return data
+
+def FMV_get_value_xml(control_label, raw = False):
+    logging.info(f"Sending request for value of control named {control_label}")
+    json = '{"message":"FMV_get_value_XML","payload":"'+ control_label + '"}'
+    socket.send(json.encode())
+
+    #  Get the reply.
+    message = socket.recv()
+    if raw:
+        data = message.decode("utf-8")
+    else:
+        data = xmltodict.parse(message.decode("utf-8"))
 
     return data
 
@@ -85,6 +115,18 @@ def FMV_get_value_DBL(control_label):
 def FMV_get_value_bool(control_label):
     bool_string = FMV_get_value(control_label)
     return bool_string == "TRUE"
+
+
+
+
+def FMV_set_cluster_elem(control_label,type,value,layers):
+    logging.info(f"Sending request for value update of control named {control_label}")
+    # json = '{"message":"FMV_set_value_ARR_STR","payload":{"name":"' + control_label + '","value":"'+ text +'"}}'
+    data = {"message": "FMV_set_cluster_elem", "payload": {"name": control_label, "type": type, "value": value, "layers":layers}}
+    data_json = json.dumps(data)
+    socket.send(data_json.encode())
+    decode_value_update(socket)
+
 
 def FMV_set_value_DBL(control_label,number):
     logging.info(f"Sending request for value update of control named {control_label}")
@@ -121,6 +163,41 @@ def SP_get_vi_name(subpanel_label):
     logging.info(f"VI in subpanel is {subpanel_vi}")
     return  subpanel_vi
 
+def SP_get_control_details(subpanel_label):
+    logging.info("Send request for front most VI.")
+    json_message = '{"message":"SP_get_control_details","payload":"' + subpanel_label + '"}'
+    socket.send(json_message.encode())
+
+    #  Get the reply.
+    message = socket.recv()
+    control_details = message.decode("utf-8")
+    # logging.info(f"Received reply {front_most_vi}")
+    control_details = json.loads(control_details)
+    return  control_details
+
+def SP_SP_get_vi_name(subpanel_label,subsubpanel_label):
+    logging.info("Send request for subpanel VI.")
+    json = '{"message":"SP_SP_get_vi_name","payload":{"subpanel":"' + subpanel_label + '","subsubpanel":"' + subsubpanel_label + '"}}'
+    socket.send(json.encode())
+
+    #  Get the reply.
+    message = socket.recv()
+    subpanel_vi = message.decode("utf-8")
+    logging.info(f"VI in subsubpanel is {subpanel_vi}")
+    return  subpanel_vi
+
+def SP_SP_get_control_details(subpanel_label,subsubpanel_label):
+    logging.info("Send request for front most VI.")
+    json_message = '{"message":"SP_SP_get_control_details","payload":{"subpanel":"' + subpanel_label + '","subsubpanel":"' + subsubpanel_label + '"}}'
+    socket.send(json_message.encode())
+
+    #  Get the reply.
+    message = socket.recv()
+    control_details = message.decode("utf-8")
+    # logging.info(f"Received reply {front_most_vi}")
+    control_details = json.loads(control_details)
+    return  control_details
+
 def SP_click_on_button(subpanel_label,control_label):
     logging.info(f"Send request to click on control named {control_label}.")
     json = '{"message":"SP_click_on_button","payload":{"subpanel":"' + subpanel_label + '","control":"'+ control_label +'"}}'
@@ -130,14 +207,17 @@ def SP_click_on_button(subpanel_label,control_label):
     message = socket.recv()
     return message.decode("utf-8") == "clicked"
 
-def SP_get_value(subpanel_label,control_label):
+def SP_get_value(subpanel_label,control_label,raw=False):
     logging.info("Send request for subpanel VI.")
     json = '{"message":"SP_get_value","payload":{"subpanel":"' + subpanel_label + '","control":"'+ control_label +'"}}'
     socket.send(json.encode())
 
     #  Get the reply.
     message = socket.recv()
-    data = message.decode("utf-8").split('=')[1]
+    if raw:
+        data = message
+    else:
+        data = message.decode("utf-8").split('=')[1]
     return  data
 
 def SP_get_value_TREE(subpanel_label,control_label):
