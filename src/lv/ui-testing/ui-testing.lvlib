@@ -24,8 +24,10 @@
 						<Item Name="set value DBL.vi" Type="VI" URL="../set value DBL.vi"/>
 					</Item>
 					<Item Name="reference" Type="Folder">
-						<Item Name="SP SP - get ctrl.vi" Type="VI" URL="../SP SP - get ctrl.vi"/>
+						<Item Name="SP SP - get subsubpanel.vi" Type="VI" URL="../SP SP - get subsubpanel.vi"/>
 						<Item Name="SP - get subpanel ref.vi" Type="VI" URL="../SP - get subpanel ref.vi"/>
+						<Item Name="filter control reference.vi" Type="VI" URL="../filter control reference.vi"/>
+						<Item Name="filter and get control value.vi" Type="VI" URL="../filter and get control value.vi"/>
 					</Item>
 				</Item>
 				<Item Name="Front Most Vi" Type="Folder">

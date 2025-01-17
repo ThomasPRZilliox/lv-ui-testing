@@ -11,16 +11,18 @@
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
 		<Item Name="Example" Type="Folder">
-			<Item Name="example  5" Type="Folder">
+			<Item Name="example 3" Type="Folder">
+				<Item Name="example 3 - subpanel.vi" Type="VI" URL="../examples/example 3 - subpanel.vi"/>
+				<Item Name="example 3 - subpanel1.vi" Type="VI" URL="../examples/example 3 - subpanel1.vi"/>
+				<Item Name="example 3 - subpanel2.vi" Type="VI" URL="../examples/example 3 - subpanel2.vi"/>
+			</Item>
+			<Item Name="example 5" Type="Folder">
 				<Item Name="example 5 - child.vi" Type="VI" URL="../ui-testing/example 5 - child.vi"/>
 				<Item Name="example 5 - grand child.vi" Type="VI" URL="../ui-testing/example 5 - grand child.vi"/>
 				<Item Name="example 5 - parent.vi" Type="VI" URL="../ui-testing/example 5 - parent.vi"/>
 			</Item>
 			<Item Name="example 1 - plot.vi" Type="VI" URL="../examples/example 1 - plot.vi"/>
 			<Item Name="example 2 - value.vi" Type="VI" URL="../examples/example 2 - value.vi"/>
-			<Item Name="example 3 - subpanel.vi" Type="VI" URL="../examples/example 3 - subpanel.vi"/>
-			<Item Name="example 3 - subpanel1.vi" Type="VI" URL="../examples/example 3 - subpanel1.vi"/>
-			<Item Name="example 3 - subpanel2.vi" Type="VI" URL="../examples/example 3 - subpanel2.vi"/>
 			<Item Name="example 4 - string.vi" Type="VI" URL="../examples/example 4 - string.vi"/>
 		</Item>
 		<Item Name="ui-testing.lvlib" Type="Library" URL="../ui-testing/ui-testing.lvlib"/>
