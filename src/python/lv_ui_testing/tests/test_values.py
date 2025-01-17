@@ -1,6 +1,12 @@
 # Start the VI "example 2 - value" first then run that script
 
 import pytest
+import importlib.util
+import sys
+spec = importlib.util.spec_from_file_location("lv_ui_testing", "../src/lv_ui_testing/ui_testing.py")
+ui_testing = importlib.util.module_from_spec(spec)
+sys.modules["lv_ui_testing"] = ui_testing
+spec.loader.exec_module(ui_testing)
 
 def test_front_most_vi():
     # Ask the tester daemon what is the front most VI

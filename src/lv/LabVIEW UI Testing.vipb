@@ -1,7 +1,7 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2024-02-25 11:29:35" Modified_Date="2024-06-10 13:13:48" Creator="Thomas" Comments="" ID="c437a934700e60ec8559fcaff22a6744">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2024-02-25 11:29:35" Modified_Date="2024-07-22 17:20:53" Creator="Thomas" Comments="" ID="9b19034eb3902b8b95af8d76ab6bc4c1">
   <Library_General_Settings>
     <Package_File_Name>Thomas_Zilliox_lib_LabVIEW_UI_Testing</Package_File_Name>
-    <Library_Version>1.2.0.10</Library_Version>
+    <Library_Version>1.2.1.11</Library_Version>
     <Auto_Increment_Version>false</Auto_Increment_Version>
     <Library_Source_Folder>ui-testing</Library_Source_Folder>
     <Library_Output_Folder>.</Library_Output_Folder>
@@ -38,7 +38,7 @@ https://github.com/ThomasPRZilliox/lv-ui-testing/wiki</Description>
       <Copyright/>
       <Packager/>
       <URL/>
-      <Release_Notes>Methods to support subsubpanel.</Release_Notes>
+      <Release_Notes>Typo in main vi event structure</Release_Notes>
     </Description>
     <Destinations>
       <Toolkit_VIs>
@@ -222,7 +222,7 @@ https://github.com/ThomasPRZilliox/lv-ui-testing/wiki</Description>
         <Path>ui-testing\start daemon.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>C1D7A510B2973E8F84A30680F5518C22</GUID>
+      <GUID>69C075B883ABA3E92596DEC2777BC9DE</GUID>
     </Functions_Palette_Data>
     <Controls_Palette_Data>
       <Parent_Palette_Index>-1</Parent_Palette_Index>
@@ -257,7 +257,7 @@ https://github.com/ThomasPRZilliox/lv-ui-testing/wiki</Description>
         <Path>ui-testing\message.ctl</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>3DB12EF3D501C0368FAF49736E686A6F</GUID>
+      <GUID>DEBAB88DFFAFECAE2506AFEABA7007E9</GUID>
     </Controls_Palette_Data>
   </Library_Palette_Definition>
 </VI_Package_Builder_Settings>

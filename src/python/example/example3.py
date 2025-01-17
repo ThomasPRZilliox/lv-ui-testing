@@ -1,5 +1,6 @@
 # Start the VI "example 3 - subplot" first then run that script
 import time
+from lv_ui_testing import ui_testing
 
 # Ask the tester daemon what is the front most VI
 front_most_vi = ui_testing.FMV_get_vi_name()
@@ -10,7 +11,7 @@ ui_testing.FMV_click_on_button("sub1")
 sub1 = ui_testing.SP_get_vi_name("mySub")
 assert sub1 == "example 3 - subpanel1.vi"
 
-data = ui_testing.SP_get_value("mySub", "myNumber")
+data = ui_testing.SP_get_value("mySub", "myNumber1")
 print(data)
 
 # Wait for 3 seconds

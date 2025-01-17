@@ -193,14 +193,17 @@ def SP_SP_click_on_button(subpanel_label,subsubpanel_label,control_label):
     return message.decode("utf-8") == "clicked"
 
 
-def SP_SP_get_value(subpanel_label,subsubpanel_label,control_label):
+def SP_SP_get_value(subpanel_label,subsubpanel_label,control_label, raw = False):
     logging.info("Send request for subpanel VI.")
     json = '{"message":"SP_SP_get_value","payload":{"subpanel":"' + subpanel_label + '","subsubpanel":"' + subsubpanel_label + '","control":"'+ control_label +'"}}'
     socket.send(json.encode())
 
     #  Get the reply.
     message = socket.recv()
-    data = message.decode("utf-8").split('=')[1]
+    if raw:
+        data = message
+    else:
+        data = message.decode("utf-8").split('=')[1]
     return  data
 
 
