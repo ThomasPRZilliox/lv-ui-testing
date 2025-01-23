@@ -1,6 +1,6 @@
 [project]
 name = "lv_ui_testing"
-version = "1.0.6"
+version = "1.1.1"
 authors = [
   { name="Thomas Zilliox", email="thomas.zilliox67@gmail.com" },
 ]
@@ -15,6 +15,7 @@ classifiers = [
 
 dependencies = [
     "pyzmq==26.0.3",
+    "xmltodict==0.14.2"
 ]
 
 [project.urls]

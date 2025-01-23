@@ -46,6 +46,20 @@ Distributed under the MIT License. See [LICENSE.txt](./LICENSE.txt) for more inf
 * Support of the webview2 control handling
 * Support of the path control handling
 
+## 1.5.0
+* Support for the controls visibility within a cluster
+* Support for the update of strings within clusters
+* Refactoring of the python code and examples to increase readability and Developer Experience overall
+
+## 1.4.0
+* Fixing of missing dependencies
+
+
+## 1.3.1
+* Support for read and write of some clusters data types
+* Support for the controls visibility within a VI
+
+
 ## 1.2.0
 
 * Support for sub-subpanel
