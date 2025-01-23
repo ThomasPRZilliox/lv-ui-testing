@@ -87,6 +87,51 @@ def FMV_get_value_xml(control_label, raw = False):
 
     return data
 
+
+def SP_get_value_xml(control_label, subpanel_label, raw = False):
+    logging.info(f"Sending request for value of control named {control_label}")
+    # json = '{"message":"SP_get_value_XML","payload":{"subpanel":"' + subpanel_label + '","control":"' + control_label + '"}}'
+    data = {
+        "message": "SP_get_value_XML",
+        "payload": {
+            "control": control_label,
+            "subpanel": subpanel_label
+        }
+    }
+    data_json = json.dumps(data)
+    socket.send(data_json.encode())
+
+    #  Get the reply.
+    message = socket.recv()
+    if raw:
+        data = message.decode("utf-8")
+    else:
+        data = xmltodict.parse(message.decode("utf-8"))
+
+    return data
+
+def SP_SP_get_value_xml(control_label, subpanel_label,subsubpanel_label ,raw = False):
+    logging.info(f"Sending request for value of control named {control_label}")
+    data = {
+        "message": "SSP_get_value_XML",
+        "payload": {
+            "control": control_label,
+            "subpanel": subpanel_label,
+            "subsubpanel": subsubpanel_label,
+        }
+    }
+    data_json = json.dumps(data)
+    socket.send(data_json.encode())
+
+    #  Get the reply.
+    message = socket.recv()
+    if raw:
+        data = message.decode("utf-8")
+    else:
+        data = xmltodict.parse(message.decode("utf-8"))
+
+    return data
+
 def decode_tree(message):
     data = message.decode("utf-8").split("Tree")[2:]  # To remove the space before the first tree word and the tree size
 
@@ -123,6 +168,42 @@ def FMV_set_cluster_elem(control_label,type,value,layers):
     logging.info(f"Sending request for value update of control named {control_label}")
     # json = '{"message":"FMV_set_value_ARR_STR","payload":{"name":"' + control_label + '","value":"'+ text +'"}}'
     data = {"message": "FMV_set_cluster_elem", "payload": {"name": control_label, "type": type, "value": value, "layers":layers}}
+    data_json = json.dumps(data)
+    socket.send(data_json.encode())
+    decode_value_update(socket)
+
+
+def SP_set_cluster_elem(control_label,type,value,layers,subpanel_label):
+    logging.info(f"Sending request for value update of control named {control_label}")
+    # json = '{"message":"FMV_set_value_ARR_STR","payload":{"name":"' + control_label + '","value":"'+ text +'"}}'
+    data = {
+        "message": "SP_set_cluster_elem",
+        "payload": {
+            "name": control_label,
+            "type": type,
+            "value": value,
+            "layers":layers,
+            "subpanel": subpanel_label
+        }
+    }
+    data_json = json.dumps(data)
+    socket.send(data_json.encode())
+    decode_value_update(socket)
+
+def SP_SP_set_cluster_elem(control_label,type,value,layers,subpanel_label,subsubpanel_label):
+    logging.info(f"Sending request for value update of control named {control_label}")
+    # json = '{"message":"FMV_set_value_ARR_STR","payload":{"name":"' + control_label + '","value":"'+ text +'"}}'
+    data = {
+        "message": "SSP_set_cluster_elem",
+        "payload": {
+            "name": control_label,
+            "type": type,
+            "value": value,
+            "layers":layers,
+            "subpanel": subpanel_label,
+            "subsubpanel": subsubpanel_label
+        }
+    }
     data_json = json.dumps(data)
     socket.send(data_json.encode())
     decode_value_update(socket)
