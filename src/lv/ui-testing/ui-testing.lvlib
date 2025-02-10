@@ -77,4 +77,5 @@
 	<Item Name="typedef" Type="Folder">
 		<Item Name="message.ctl" Type="VI" URL="../message.ctl"/>
 	</Item>
+	<Item Name="format write cluster.vi" Type="VI" URL="../format write cluster.vi"/>
 </Library>

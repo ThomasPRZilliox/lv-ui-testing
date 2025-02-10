@@ -1,4 +1,4 @@
-# Start the VI "example 1 - Plot" first then run that script
+# Start the VI "example 7 - cluster" first then run that script
 import importlib.util
 import sys
 spec = importlib.util.spec_from_file_location("lv_ui_testing", "../src/lv_ui_testing/ui_testing.py")
@@ -20,6 +20,16 @@ def test_fmv_cluster_write():
     data = ui_testing.FMV_get_value_xml("Cluster")['LvVariant']['Cluster']
     new_bool = data['Boolean']['Val']
     assert new_bool == "1"
+
+def test_fmv_cluster_str_write():
+    control_settings = ui_testing.FMV_set_cluster_elem("String","STR","Hello",["Cluster"])
+    data = ui_testing.FMV_get_value_xml("Cluster")['LvVariant']['Cluster']
+    new_str = data['String']['Val']
+    assert new_str == "Hello"
+    control_settings = ui_testing.FMV_set_cluster_elem("String", "STR", "World", ["Cluster"])
+    data = ui_testing.FMV_get_value_xml("Cluster")['LvVariant']['Cluster']
+    new_str = data['String']['Val']
+    assert new_str == "World"
 
 def test_fmv_subcluster_write():
     control_settings = ui_testing.FMV_set_cluster_elem("Boolean","BOOL","False",["Cluster","Cluster 2"])
@@ -51,6 +61,17 @@ def test_sp_cluster_write():
     new_bool = data['Boolean']['Val']
     assert new_bool == "1"
 
+def test_sp_cluster_str_write():
+    control_settings = ui_testing.SP_set_cluster_elem("String", "STR", "Hello", ["Cluster"], "Sub Panel")
+    data = ui_testing.SP_get_value_xml("Cluster", "Sub Panel")['LvVariant']['Cluster']
+    new_str = data['String']['Val']
+    assert new_str == "Hello"
+    control_settings = ui_testing.SP_set_cluster_elem("String", "STR", "World", ["Cluster"], "Sub Panel")
+    data = ui_testing.SP_get_value_xml("Cluster", "Sub Panel")['LvVariant']['Cluster']
+    new_str = data['String']['Val']
+    assert new_str == "World"
+
+
 def test_sp_subcluster_write():
     control_settings = ui_testing.SP_set_cluster_elem("Boolean","BOOL","False",["Cluster","Cluster 2"],"Sub Panel")
     data = ui_testing.SP_get_value_xml("Cluster","Sub Panel")['LvVariant']['Cluster']['Cluster']
@@ -80,6 +101,21 @@ def test_ssp_cluster_write():
     data = ui_testing.SP_SP_get_value_xml("Cluster","Sub Panel","Sub Panel Children")['LvVariant']['Cluster']
     new_bool = data['Boolean']['Val']
     assert new_bool == "1"
+
+def test_ssp_cluster_str_write():
+    control_settings = ui_testing.SP_SP_set_cluster_elem("String", "STR", "Hello", ["Cluster"], "Sub Panel",
+                                                         "Sub Panel Children")
+    data = ui_testing.SP_SP_get_value_xml("Cluster", "Sub Panel", "Sub Panel Children")['LvVariant']['Cluster']
+    new_str = data['String']['Val']
+    assert new_str == "Hello"
+
+    control_settings = ui_testing.SP_SP_set_cluster_elem("String", "STR", "World", ["Cluster"], "Sub Panel",
+                                                         "Sub Panel Children")
+    data = ui_testing.SP_SP_get_value_xml("Cluster", "Sub Panel", "Sub Panel Children")['LvVariant']['Cluster']
+    new_str = data['String']['Val']
+    assert new_str == "World"
+
+
 
 def test_ssp_subcluster_write():
     control_settings = ui_testing.SP_SP_set_cluster_elem("Boolean","BOOL","False",["Cluster","Cluster 2"],"Sub Panel","Sub Panel Children")

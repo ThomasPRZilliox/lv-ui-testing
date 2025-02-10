@@ -1,4 +1,4 @@
-# Start the VI "example 1 - Plot" first then run that script
+# Start the VI "example 6 - visibility" first then run that script
 import importlib.util
 import sys
 spec = importlib.util.spec_from_file_location("lv_ui_testing", "../src/lv_ui_testing/ui_testing.py")
