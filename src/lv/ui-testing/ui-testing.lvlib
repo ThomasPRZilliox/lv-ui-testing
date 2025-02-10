@@ -30,6 +30,7 @@
 						<Item Name="filter control reference.vi" Type="VI" URL="../filter control reference.vi"/>
 						<Item Name="filter and get control value.vi" Type="VI" URL="../filter and get control value.vi"/>
 						<Item Name="get all control details.vi" Type="VI" URL="../get all control details.vi"/>
+						<Item Name="get cluster details.vi" Type="VI" URL="../get cluster details.vi"/>
 					</Item>
 					<Item Name="filter and get control value (XML).vi" Type="VI" URL="../filter and get control value (XML).vi"/>
 				</Item>
@@ -77,5 +78,8 @@
 	<Item Name="typedef" Type="Folder">
 		<Item Name="message.ctl" Type="VI" URL="../message.ctl"/>
 	</Item>
+	<Item Name="FMV - get cluster details.vi" Type="VI" URL="../FMV - get cluster details.vi"/>
 	<Item Name="format write cluster.vi" Type="VI" URL="../format write cluster.vi"/>
+	<Item Name="SP - get cluster details.vi" Type="VI" URL="../SP - get cluster details.vi"/>
+	<Item Name="SSP - get cluster detailst.vi" Type="VI" URL="../SSP - get cluster detailst.vi"/>
 </Library>

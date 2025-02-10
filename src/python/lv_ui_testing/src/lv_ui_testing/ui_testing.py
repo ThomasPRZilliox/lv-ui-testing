@@ -50,6 +50,69 @@ def FMV_get_control_details():
     control_details = json.loads(control_details)
     return  control_details
 
+def FMV_get_cluster_details(control_label):
+    logging.info("Send request for front most VI.")
+    json_message = '{"message":"FMV_get_cluster_details"}'
+
+    data = {
+        "message": "FMV_get_cluster_details",
+        "payload": {
+            "control": control_label
+        }
+    }
+    data_json = json.dumps(data)
+    socket.send(data_json.encode())
+
+    #  Get the reply.
+    message = socket.recv()
+    control_details = message.decode("utf-8")
+    # logging.info(f"Received reply {front_most_vi}")
+    control_details = json.loads(control_details)
+    return  control_details
+
+def SP_get_cluster_details(control_label,subpanel_label):
+    logging.info("Send request for front most VI.")
+    json_message = '{"message":"SP_get_cluster_details"}'
+
+    data = {
+        "message": "SP_get_cluster_details",
+        "payload": {
+            "control": control_label,
+            "subpanel": subpanel_label
+        }
+    }
+    data_json = json.dumps(data)
+    socket.send(data_json.encode())
+
+    #  Get the reply.
+    message = socket.recv()
+    control_details = message.decode("utf-8")
+    # logging.info(f"Received reply {front_most_vi}")
+    control_details = json.loads(control_details)
+    return  control_details
+
+def SSP_get_cluster_details(control_label,subpanel_label,subsubpanel_label):
+    logging.info("Send request for front most VI.")
+    json_message = '{"message":"SSP_get_cluster_details"}'
+
+    data = {
+        "message": "SP_get_cluster_details",
+        "payload": {
+            "control": control_label,
+            "subpanel": subpanel_label,
+            "subsubpanel": subsubpanel_label
+        }
+    }
+    data_json = json.dumps(data)
+    socket.send(data_json.encode())
+
+    #  Get the reply.
+    message = socket.recv()
+    control_details = message.decode("utf-8")
+    # logging.info(f"Received reply {front_most_vi}")
+    control_details = json.loads(control_details)
+    return  control_details
+
 def FMV_click_on_button(control_label):
     logging.info(f"Send request to click on control named {control_label}.")
     json = '{"message":"FMV_click_on_button","payload":"'+ control_label +'"}'
