@@ -96,7 +96,7 @@ def SSP_get_cluster_details(control_label,subpanel_label,subsubpanel_label):
     json_message = '{"message":"SSP_get_cluster_details"}'
 
     data = {
-        "message": "SP_get_cluster_details",
+        "message": "SSP_get_cluster_details",
         "payload": {
             "control": control_label,
             "subpanel": subpanel_label,
