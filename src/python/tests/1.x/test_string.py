@@ -30,6 +30,3 @@ def test_update_tree():
 
     # Compare the results, they should be differnet
     assert data == ["Child 1","Child 2"]
-
-test_update_string()
-test_update_tree()
