@@ -41,15 +41,17 @@ Distributed under the MIT License. See [LICENSE.txt](./LICENSE.txt) for more inf
 
 # Roadmap
 
-## 2.0.0
-
+## 2.1.0
 * Support of the webview2 control handling
 * Support of the path control handling
+
+## 2.0.0
+* Refactoring of the python code and examples to increase readability and Developer Experience overall
 
 ## 1.5.0
 * Support for the controls visibility within a cluster
 * Support for the update of strings within clusters
-* Refactoring of the python code and examples to increase readability and Developer Experience overall
+
 
 ## 1.4.0
 * Fixing of missing dependencies
