@@ -1,7 +1,7 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2024-02-25 11:29:35" Modified_Date="2025-02-10 17:33:14" Creator="Thomas" Comments="" ID="cef8d3a7810bfd2c86257c81f4cbe1b7">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2024-02-25 11:29:35" Modified_Date="2025-02-25 00:01:57" Creator="Thomas" Comments="" ID="91b3edfc713b04cbe4d27fae6d7dd1f9">
   <Library_General_Settings>
     <Package_File_Name>Thomas_Zilliox_lib_LabVIEW_UI_Testing</Package_File_Name>
-    <Library_Version>1.5.0.15</Library_Version>
+    <Library_Version>2.0.0.16</Library_Version>
     <Auto_Increment_Version>false</Auto_Increment_Version>
     <Library_Source_Folder>ui-testing</Library_Source_Folder>
     <Library_Output_Folder>.</Library_Output_Folder>
@@ -47,8 +47,10 @@ https://github.com/ThomasPRZilliox/lv-ui-testing/wiki</Description>
       <Copyright/>
       <Packager/>
       <URL/>
-      <Release_Notes>* Support for the controls visibility within a cluster
-* Support for the update of strings within clusters</Release_Notes>
+      <Release_Notes>* Improvement of the mouse click
+* Support of setting bool control
+* Refactoring of python
+* More tests to improve quality</Release_Notes>
     </Description>
     <Destinations>
       <Toolkit_VIs>
@@ -232,7 +234,7 @@ https://github.com/ThomasPRZilliox/lv-ui-testing/wiki</Description>
         <Path>ui-testing\start daemon.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>CDD87EDA54ADA12CD14F65D1B3ADFBD0</GUID>
+      <GUID>09FFE52E86EABD56E25A21C8102B4F08</GUID>
     </Functions_Palette_Data>
     <Controls_Palette_Data>
       <Parent_Palette_Index>-1</Parent_Palette_Index>
@@ -267,7 +269,7 @@ https://github.com/ThomasPRZilliox/lv-ui-testing/wiki</Description>
         <Path>ui-testing\message.ctl</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>3F9F771E737CD17818F92B6C034C7344</GUID>
+      <GUID>F18C5446C8578B8A314FDFB59B081DD3</GUID>
     </Controls_Palette_Data>
   </Library_Palette_Definition>
 </VI_Package_Builder_Settings>

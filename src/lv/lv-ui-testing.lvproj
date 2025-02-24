@@ -16,6 +16,11 @@
 				<Item Name="example 3 - subpanel1.vi" Type="VI" URL="../examples/example 3 - subpanel1.vi"/>
 				<Item Name="example 3 - subpanel2.vi" Type="VI" URL="../examples/example 3 - subpanel2.vi"/>
 			</Item>
+			<Item Name="example 4b" Type="Folder">
+				<Item Name="example 4b - child.vi" Type="VI" URL="../examples/example 4b - child.vi"/>
+				<Item Name="example 4b - grand child.vi" Type="VI" URL="../examples/example 4b - grand child.vi"/>
+				<Item Name="example 4b - string.vi" Type="VI" URL="../examples/example 4b - string.vi"/>
+			</Item>
 			<Item Name="example 5" Type="Folder">
 				<Item Name="example 5 - child.vi" Type="VI" URL="../ui-testing/example 5 - child.vi"/>
 				<Item Name="example 5 - grand child.vi" Type="VI" URL="../ui-testing/example 5 - grand child.vi"/>
@@ -30,6 +35,16 @@
 				<Item Name="example 7 - child.vi" Type="VI" URL="../ui-testing/example 7 - child.vi"/>
 				<Item Name="example 7 - cluster.vi" Type="VI" URL="../ui-testing/example 7 - cluster.vi"/>
 				<Item Name="example 7 - grand child.vi" Type="VI" URL="../ui-testing/example 7 - grand child.vi"/>
+			</Item>
+			<Item Name="example 8" Type="Folder">
+				<Item Name="example 8 - child.vi" Type="VI" URL="../ui-testing/example 8 - child.vi"/>
+				<Item Name="example 8 - grand child.vi" Type="VI" URL="../ui-testing/example 8 - grand child.vi"/>
+				<Item Name="example 8 - mouse click.vi" Type="VI" URL="../examples/example 8 - mouse click.vi"/>
+			</Item>
+			<Item Name="example 9" Type="Folder">
+				<Item Name="example 9 - bool.vi" Type="VI" URL="../ui-testing/example 9 - bool.vi"/>
+				<Item Name="example 9 - child.vi" Type="VI" URL="../ui-testing/example 9 - child.vi"/>
+				<Item Name="example 9 - grand child.vi" Type="VI" URL="../ui-testing/example 9 - grand child.vi"/>
 			</Item>
 			<Item Name="example 1 - plot.vi" Type="VI" URL="../examples/example 1 - plot.vi"/>
 			<Item Name="example 2 - value.vi" Type="VI" URL="../examples/example 2 - value.vi"/>

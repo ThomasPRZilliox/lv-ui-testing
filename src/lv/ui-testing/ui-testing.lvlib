@@ -15,13 +15,18 @@
 				<Item Name="low level" Type="Folder">
 					<Item Name="gui" Type="Folder">
 						<Item Name="FMV - click on control.vi" Type="VI" URL="../FMV - click on control.vi"/>
-						<Item Name="SP SP - click on ctrl.vi" Type="VI" URL="../SP SP - click on ctrl.vi"/>
+						<Item Name="SSP - click on ctrl.vi" Type="VI" URL="../SSP - click on ctrl.vi"/>
+						<Item Name="click_button_coordinates.vi" Type="VI" URL="../click_button_coordinates.vi"/>
+						<Item Name="click_fmv_coord.vi" Type="VI" URL="../click_fmv_coord.vi"/>
+						<Item Name="click_sp_coord.vi" Type="VI" URL="../click_sp_coord.vi"/>
+						<Item Name="format write cluster.vi" Type="VI" URL="../format write cluster.vi"/>
 						<Item Name="SP - click on ctrl.vi" Type="VI" URL="../SP - click on ctrl.vi"/>
 					</Item>
 					<Item Name="value" Type="Folder">
 						<Item Name="set value array STR.vi" Type="VI" URL="../set value array STR.vi"/>
 						<Item Name="set value STR.vi" Type="VI" URL="../set value STR.vi"/>
 						<Item Name="set value DBL.vi" Type="VI" URL="../set value DBL.vi"/>
+						<Item Name="set value BOOL.vi" Type="VI" URL="../set value BOOL.vi"/>
 					</Item>
 					<Item Name="reference" Type="Folder">
 						<Item Name="SP SP - get subsubpanel.vi" Type="VI" URL="../SP SP - get subsubpanel.vi"/>
@@ -39,6 +44,8 @@
 					<Item Name="FMV - set cluster element.vi" Type="VI" URL="../FMV - set cluster element.vi"/>
 					<Item Name="FMV - set value array STR.vi" Type="VI" URL="../FMV - set value array STR.vi"/>
 					<Item Name="FMV - set value STR.vi" Type="VI" URL="../FMV - set value STR.vi"/>
+					<Item Name="FMV - get cluster details.vi" Type="VI" URL="../FMV - get cluster details.vi"/>
+					<Item Name="FMV - set value BOOL.vi" Type="VI" URL="../FMV - set value BOOL.vi"/>
 					<Item Name="FMV - get value.vi" Type="VI" URL="../FMV - get value.vi"/>
 					<Item Name="FMV - click.vi" Type="VI" URL="../FMV - click.vi"/>
 					<Item Name="FMV - set value DBL.vi" Type="VI" URL="../FMV - set value DBL.vi"/>
@@ -54,6 +61,8 @@
 					<Item Name="SP - set value DBL.vi" Type="VI" URL="../SP - set value DBL.vi"/>
 					<Item Name="SP - Get current VI name.vi" Type="VI" URL="../SP - Get current VI name.vi"/>
 					<Item Name="SP - get control details.vi" Type="VI" URL="../SP - get control details.vi"/>
+					<Item Name="SP - get cluster details.vi" Type="VI" URL="../SP - get cluster details.vi"/>
+					<Item Name="SP - set value BOOL.vi" Type="VI" URL="../SP - set value BOOL.vi"/>
 				</Item>
 				<Item Name="SubSubPanel" Type="Folder">
 					<Item Name="SSP - get control details.vi" Type="VI" URL="../SSP - get control details.vi"/>
@@ -65,6 +74,8 @@
 					<Item Name="SSP - set value DBL.vi" Type="VI" URL="../SSP - set value DBL.vi"/>
 					<Item Name="SSP - click.vi" Type="VI" URL="../SSP - click.vi"/>
 					<Item Name="SSP - get value (XML).vi" Type="VI" URL="../SSP - get value (XML).vi"/>
+					<Item Name="SSP - get cluster detailst.vi" Type="VI" URL="../SSP - get cluster detailst.vi"/>
+					<Item Name="SSP - set value BOOL.vi" Type="VI" URL="../SSP - set value BOOL.vi"/>
 				</Item>
 			</Item>
 			<Item Name="main.vi" Type="VI" URL="../main.vi"/>
@@ -78,8 +89,4 @@
 	<Item Name="typedef" Type="Folder">
 		<Item Name="message.ctl" Type="VI" URL="../message.ctl"/>
 	</Item>
-	<Item Name="FMV - get cluster details.vi" Type="VI" URL="../FMV - get cluster details.vi"/>
-	<Item Name="format write cluster.vi" Type="VI" URL="../format write cluster.vi"/>
-	<Item Name="SP - get cluster details.vi" Type="VI" URL="../SP - get cluster details.vi"/>
-	<Item Name="SSP - get cluster detailst.vi" Type="VI" URL="../SSP - get cluster detailst.vi"/>
 </Library>

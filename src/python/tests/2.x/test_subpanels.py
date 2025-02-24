@@ -1,6 +1,5 @@
 # Start the VI "example 3 - subpnael" first then run that script
-# import lv_ui_testing.src.lv_ui_testing.ui_testing as ui_testing
-import lv_ui_testing.front_most_window as fmv
+import lv_ui_testing.front_most_vi as fmv
 import lv_ui_testing.sub_panel as sp
 import pytest
 

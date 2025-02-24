@@ -1,7 +1,6 @@
 # Start the VI "example 2 - value" first then run that script
-import lv_ui_testing.front_most_window as fmv
+import lv_ui_testing.front_most_vi as fmv
 import pytest
-
 
 def test_front_most_vi():
     # Ask the tester daemon what is the front most VI
