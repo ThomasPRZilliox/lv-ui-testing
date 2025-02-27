@@ -2,6 +2,7 @@ import zmq
 import logging
 import json
 import xmltodict
+import re
 
 print("start")
 
@@ -134,8 +135,19 @@ def FMV_get_value(control_label, raw = False):
     if raw:
         data = message.decode("utf-8")
     else:
-        data = message.decode("utf-8").split('=')[1]
+        data = extract_value_from_string(message.decode("utf-8"))
 
+    return data
+
+def extract_value_from_string(stringInput):
+    """
+    Given a string input, it will parse and return anything which matches after the last equals sign
+    """
+    match = re.search(r".*=(.*)$", stringInput)
+    if match:
+        data = match.group(1)
+    else:
+        data = ""
     return data
 
 def FMV_get_value_xml(control_label, raw = False):
@@ -202,7 +214,9 @@ def decode_tree(message):
 
     selected_tree_element = []
     for element in data:
-        selected_tree_element.append(element.split("=")[1])
+        match = extract_value_from_string(element)
+        if match:
+            selected_tree_element.append(match)
 
     return selected_tree_element
 
@@ -363,7 +377,7 @@ def SP_get_value(subpanel_label,control_label,raw=False):
     if raw:
         data = message
     else:
-        data = message.decode("utf-8").split('=')[1]
+        data = extract_value_from_string(message.decode("utf-8"))
     return  data
 
 def SP_get_value_TREE(subpanel_label,control_label):
@@ -429,7 +443,7 @@ def SP_SP_get_value(subpanel_label,subsubpanel_label,control_label, raw = False)
     if raw:
         data = message
     else:
-        data = message.decode("utf-8").split('=')[1]
+        data = extract_value_from_string(message.decode("utf-8"))
     return  data
 
 
