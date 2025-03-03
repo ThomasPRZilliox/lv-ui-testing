@@ -3,6 +3,7 @@ import logging
 import json
 import xmltodict
 
+
 def get_vi_name():
     logging.info("Send request for front most VI.")
     data = {"message": "FMV_get_vi_name"}
@@ -30,10 +31,22 @@ def get_value(control_label, raw = False):
         "payload": control_label
     }
     control_value = core.send_message(data)
+    print(control_value)
     if not raw:
         control_value = control_value.split('=')[1]
 
     return control_value
+
+def resolve_value (control_label):
+    logging.info(f"Sending request for value of control named {control_label}")
+    data = {
+        "message": "FMV_get_value_XML",
+        "payload": control_label
+    }
+    xml_string = core.send_message(data)
+    return core.parse_lvvariant(xml_string)
+
+
 
 def get_control_details():
     logging.info("Send request for front most VI.")
