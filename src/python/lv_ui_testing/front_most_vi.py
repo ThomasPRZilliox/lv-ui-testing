@@ -21,6 +21,16 @@ def click_on_button(control_label):
     acknowledgement = core.send_message(data)
     return acknowledgement == "clicked"
 
+def click_on_close():
+    logging.info(f"Send request to click on close.")
+    data = {
+        "message": "FMV_click_on_close"
+    }
+    acknowledgement = core.send_message(data)
+    return acknowledgement == "clicked"
+
+
+
 ##############
 # Get values #
 ##############

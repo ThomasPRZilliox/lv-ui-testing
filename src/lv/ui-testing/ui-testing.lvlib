@@ -14,6 +14,7 @@
 				<Property Name="NI.SortType" Type="Int">3</Property>
 				<Item Name="low level" Type="Folder">
 					<Item Name="gui" Type="Folder">
+						<Item Name="FMV - click on close.vi" Type="VI" URL="../FMV - click on close.vi"/>
 						<Item Name="FMV - click on control.vi" Type="VI" URL="../FMV - click on control.vi"/>
 						<Item Name="SSP - click on ctrl.vi" Type="VI" URL="../SSP - click on ctrl.vi"/>
 						<Item Name="click_button_coordinates.vi" Type="VI" URL="../click_button_coordinates.vi"/>

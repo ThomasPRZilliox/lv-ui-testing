@@ -49,6 +49,10 @@
 			<Item Name="example 1 - plot.vi" Type="VI" URL="../examples/example 1 - plot.vi"/>
 			<Item Name="example 2 - value.vi" Type="VI" URL="../examples/example 2 - value.vi"/>
 			<Item Name="example 4 - string.vi" Type="VI" URL="../examples/example 4 - string.vi"/>
+			<Item Name="example 10 - resolve data.vi" Type="VI" URL="../ui-testing/example 10 - resolve data.vi"/>
+		</Item>
+		<Item Name="Tests" Type="Folder">
+			<Item Name="test - all.vi" Type="VI" URL="../ui-testing/test - all.vi"/>
 		</Item>
 		<Item Name="ui-testing.lvlib" Type="Library" URL="../ui-testing/ui-testing.lvlib"/>
 		<Item Name="Dependencies" Type="Dependencies">
