@@ -1,5 +1,5 @@
 # Start the VI "example 3 - subpnael" first then run that script
-import lv_ui_testing.src.lv_ui_testing.ui_testing as ui_testing
+from lv_ui_testing import ui_testing
 import pytest
 
 def test_front_most_vi():

@@ -1,5 +1,5 @@
 # Start the VI "example 2 - value" first then run that script
-import lv_ui_testing.src.lv_ui_testing.ui_testing as ui_testing
+from lv_ui_testing import ui_testing
 import pytest
 
 

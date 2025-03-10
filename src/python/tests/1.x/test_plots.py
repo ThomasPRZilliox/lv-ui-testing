@@ -1,5 +1,7 @@
 # Start the VI "example 1 - Plot" first then run that script
-import lv_ui_testing.src.lv_ui_testing.ui_testing as ui_testing
+from lv_ui_testing import ui_testing
+
+
 def test_front_most_vi():
     # Ask the tester daemon what is the front most VI
     front_most_vi = ui_testing.FMV_get_vi_name()

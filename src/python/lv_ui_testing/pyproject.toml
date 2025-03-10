@@ -1,6 +1,6 @@
 [project]
 name = "lv_ui_testing"
-version = "2.0.0"
+version = "2.1.0"
 authors = [
   { name="Thomas Zilliox", email="thomas.zilliox67@gmail.com" },
 ]
@@ -22,4 +22,9 @@ dependencies = [
 Homepage = "https://github.com/ThomasPRZilliox/lv-ui-testing/wiki"
 Issues = "https://github.com/pypa/sampleproject/issues"
 
+#[tool.setuptools]
+#packages = ["lv_ui_testing", "lv_ui_testing.src", "lv_ui_testing.src.lv_ui_testing"]
 
+#[tool.setuptools.packages.find]
+#where = ["."]
+#include = ["lv_ui_testing*"]

@@ -2,7 +2,7 @@
 
 from lv_ui_testing import ui_testing
 
-import  lv_ui_testing.
+
 
 def test_front_most_vi():
     # Ask the tester daemon what is the front most VI

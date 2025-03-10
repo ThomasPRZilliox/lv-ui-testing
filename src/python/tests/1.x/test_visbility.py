@@ -1,5 +1,6 @@
 # Start the VI "example 6 - visibility" first then run that script
-import lv_ui_testing.src.lv_ui_testing.ui_testing as ui_testing
+from lv_ui_testing import ui_testing
+
 
 def test_front_most_vi():
     # Ask the tester daemon what is the front most VI
