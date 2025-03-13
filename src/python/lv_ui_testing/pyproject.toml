@@ -1,6 +1,6 @@
 [project]
 name = "lv_ui_testing"
-version = "2.1.0"
+version = "2.1.1"
 authors = [
   { name="Thomas Zilliox", email="thomas.zilliox67@gmail.com" },
 ]

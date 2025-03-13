@@ -103,6 +103,11 @@ def get_value_xml(control_label, subpanel_label,subsubpanel_label ,raw = False):
         data = xmltodict.parse(control_value)
     return data
 
+def resolve_value (control_label, subpanel_label, subsubpanel_label):
+    xml_string = get_value_xml(control_label,subpanel_label,subsubpanel_label,raw=True)
+    return core.parse_lvvariant(xml_string)
+
+
 def get_value_TREE(subpanel_label,subsubpanel_label,control_label):
     logging.info(f"Sending request for subpanel VI for value of control named {control_label}")
     message = get_value(subpanel_label,subsubpanel_label,control_label, raw=True)

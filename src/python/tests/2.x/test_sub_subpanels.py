@@ -12,15 +12,29 @@ def test_read_string():
     ssp.set_value_STR("Sub Panel","Sub Panel Children","String","Hello")
     assert "Hello" == ssp.get_value("Sub Panel", "Sub Panel Children", "String")
 
+def test_read_string2():
+    ssp.click_on_button("Sub Panel","Sub Panel Children","Clear")
+    ssp.set_value_STR("Sub Panel","Sub Panel Children","String","Hello")
+    assert "Hello" == ssp.resolve_value("String", "Sub Panel", "Sub Panel Children")
+
 def test_read_DBL():
     ssp.click_on_button("Sub Panel","Sub Panel Children","Clear")
     ssp.set_value_DBL("Sub Panel", "Sub Panel Children", "Double",10)
     assert 10 == ssp.get_value_DBL("Sub Panel", "Sub Panel Children", "Double")
 
+def test_read_DBL2():
+    ssp.click_on_button("Sub Panel","Sub Panel Children","Clear")
+    ssp.set_value_DBL("Sub Panel", "Sub Panel Children", "Double",10)
+    assert 10 == ssp.resolve_value("Double", "Sub Panel", "Sub Panel Children")
+
 def test_read_bool():
     ssp.set_value_DBL("Sub Panel", "Sub Panel Children", "Double", 20)
     assert ssp.get_value_bool("Sub Panel", "Sub Panel Children", "20?")
     # 20?
+
+def test_read_bool2():
+    ssp.set_value_DBL("Sub Panel", "Sub Panel Children", "Double", 20)
+    assert ssp.resolve_value("20?", "Sub Panel", "Sub Panel Children")
 
 
 

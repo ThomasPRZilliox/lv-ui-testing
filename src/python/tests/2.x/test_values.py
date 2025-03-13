@@ -20,3 +20,15 @@ def test_set_value(number,expected_bool):
     assert data_bool == expected_bool
     assert data_number == number
 
+@pytest.mark.parametrize("number, expected_bool", [ (x, x > 5) for x in range(1, 11)])
+
+def test_set_value2(number,expected_bool):
+    numeric_label = "myNumber"
+    boolean_label = "greater"
+
+    fmv.set_value_DBL(numeric_label,number)
+    data_number = fmv.resolve_value(numeric_label)
+    data_bool = fmv.resolve_value(boolean_label)
+
+    assert data_bool == expected_bool
+    assert data_number == number

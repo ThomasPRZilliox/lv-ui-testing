@@ -19,11 +19,21 @@ def test_fmv():
         fmv.set_value_BOOL(control_label,status)
         assert fmv.get_value_bool(control_label) == status
 
+def test_fmv2():
+    for status in [True, False, True]:
+        fmv.set_value_BOOL(control_label,status)
+        assert fmv.resolve_value(control_label) == status
+
 
 def test_sp():
     for status in [True, False, True]:
         sp.set_value_BOOL(sp_label,control_label,status)
         assert sp.get_value_bool(sp_label,control_label) == status
+
+def test_sp2():
+    for status in [True, False, True]:
+        sp.set_value_BOOL(sp_label,control_label,status)
+        assert sp.resolve_value(control_label=control_label,subpanel_label=sp_label) == status
 
 def test_ssp():
     for status in [True, False, True]:
@@ -31,3 +41,8 @@ def test_ssp():
         assert ssp.get_value_bool(sp_label,ssp_label,control_label) == status
 
 
+def test_ssp2():
+    for status in [True, False, True]:
+        ssp.set_value_BOOL(sp_label,ssp_label,control_label,status)
+        print(ssp.resolve_value(control_label=control_label,subpanel_label=sp_label,subsubpanel_label=ssp_label))
+        assert ssp.resolve_value(control_label=control_label,subpanel_label=sp_label,subsubpanel_label=ssp_label) == status

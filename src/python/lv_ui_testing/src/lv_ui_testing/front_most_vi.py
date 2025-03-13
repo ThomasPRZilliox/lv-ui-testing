@@ -47,14 +47,7 @@ def get_value(control_label, raw = False):
 
     return control_value
 
-def resolve_value (control_label):
-    logging.info(f"Sending request for value of control named {control_label}")
-    data = {
-        "message": "FMV_get_value_XML",
-        "payload": control_label
-    }
-    xml_string = core.send_message(data)
-    return core.parse_lvvariant(xml_string)
+
 
 
 
@@ -106,6 +99,15 @@ def get_value_xml(control_label, raw = False):
         data = xmltodict.parse(control_value)
     return data
 
+def resolve_value (control_label):
+    # logging.info(f"Sending request for value of control named {control_label}")
+    # data = {
+    #     "message": "FMV_get_value_XML",
+    #     "payload": control_label
+    # }
+    # xml_string = core.send_message(data)
+    xml_string = get_value_xml(control_label,raw=True)
+    return core.parse_lvvariant(xml_string)
 
 #############
 # Set Value #

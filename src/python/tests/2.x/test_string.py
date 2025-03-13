@@ -34,3 +34,35 @@ def test_update_tree():
     fmv.set_value_ARR_STR("Tree", ["Child 1","Child 2"])
     data = fmv.get_value_TREE(tree_label)
     assert data == ["Child 1","Child 2"]
+
+
+def test_update_string2():
+    # Generate a random plot and query the data insisde it
+    string_label = "String"
+
+    fmv.set_value_STR(string_label,"Hello")
+    data = fmv.resolve_value(string_label)
+    fmv.set_value_STR(string_label, data + " World")
+    data = fmv.resolve_value(string_label)
+
+    assert data == "Hello World"
+
+
+
+def test_update_tree():
+    tree_label = ("Tree")
+
+    # Unselect previous choices
+    fmv.set_value_ARR_STR("Tree", [])
+    data = fmv.resolve_value(tree_label)
+    assert data == [None]
+
+    # Only select the parent node
+    fmv.set_value_ARR_STR("Tree",["Parent"])
+    data = fmv.resolve_value(tree_label)
+    assert data == ["Parent"]
+
+    # Select the two children nodes
+    fmv.set_value_ARR_STR("Tree", ["Child 1","Child 2"])
+    data = fmv.resolve_value(tree_label)
+    assert data == ["Child 1","Child 2"]

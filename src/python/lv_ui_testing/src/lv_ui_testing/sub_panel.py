@@ -102,7 +102,9 @@ def get_value_xml(control_label, subpanel_label, raw = False):
         data = xmltodict.parse(control_value)
     return data
 
-
+def resolve_value (control_label, subpanel_label):
+    xml_string = get_value_xml(control_label,subpanel_label,raw=True)
+    return core.parse_lvvariant(xml_string)
 
 ##############
 # Set values #
