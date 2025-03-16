@@ -1,7 +1,7 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2024-02-25 11:29:35" Modified_Date="2025-02-25 00:01:57" Creator="Thomas" Comments="" ID="91b3edfc713b04cbe4d27fae6d7dd1f9">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2024-02-25 11:29:35" Modified_Date="2025-03-16 21:31:58" Creator="Thomas" Comments="" ID="c3f5c511190cd954d641d6603c153ac3">
   <Library_General_Settings>
     <Package_File_Name>Thomas_Zilliox_lib_LabVIEW_UI_Testing</Package_File_Name>
-    <Library_Version>2.0.0.16</Library_Version>
+    <Library_Version>2.0.2.18</Library_Version>
     <Auto_Increment_Version>false</Auto_Increment_Version>
     <Library_Source_Folder>ui-testing</Library_Source_Folder>
     <Library_Output_Folder>.</Library_Output_Folder>
@@ -17,13 +17,11 @@
   </Library_General_Settings>
   <Advanced_Settings>
     <Package_Dependencies>
-      <External_Dependencies>MGI_General_VIs &gt;= 3.8</External_Dependencies>
       <External_Dependencies>labview-zmq &gt;= 3.6.2.112</External_Dependencies>
-      <External_Dependencies>mgi_lib_application_control &gt;= 1.1.1.10</External_Dependencies>
+      <External_Dependencies>ni_lib_unicode &gt;= 2.0.1.6</External_Dependencies>
       <External_Dependencies>oglib_appcontrol &gt;= 4.1.0.7</External_Dependencies>
-      <Direct_Dependencies>MGI_General_VIs-3.8-20</Direct_Dependencies>
       <Direct_Dependencies>labview-zmq-3.6.2.112</Direct_Dependencies>
-      <Direct_Dependencies>mgi_lib_application_control-1.1.1.10</Direct_Dependencies>
+      <Direct_Dependencies>ni_lib_unicode-2.0.1.6</Direct_Dependencies>
       <Direct_Dependencies>oglib_appcontrol-4.1.0.7</Direct_Dependencies>
     </Package_Dependencies>
     <Custom_Action_VIs>
@@ -47,10 +45,7 @@ https://github.com/ThomasPRZilliox/lv-ui-testing/wiki</Description>
       <Copyright/>
       <Packager/>
       <URL/>
-      <Release_Notes>* Improvement of the mouse click
-* Support of setting bool control
-* Refactoring of python
-* More tests to improve quality</Release_Notes>
+      <Release_Notes>* local copy (backup) of the MGI VIs as it seems to have some packaging issues</Release_Notes>
     </Description>
     <Destinations>
       <Toolkit_VIs>
@@ -234,7 +229,7 @@ https://github.com/ThomasPRZilliox/lv-ui-testing/wiki</Description>
         <Path>ui-testing\start daemon.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>09FFE52E86EABD56E25A21C8102B4F08</GUID>
+      <GUID>DCF4B88387906CD99DD721B1D596E0E2</GUID>
     </Functions_Palette_Data>
     <Controls_Palette_Data>
       <Parent_Palette_Index>-1</Parent_Palette_Index>
@@ -269,7 +264,7 @@ https://github.com/ThomasPRZilliox/lv-ui-testing/wiki</Description>
         <Path>ui-testing\message.ctl</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>F18C5446C8578B8A314FDFB59B081DD3</GUID>
+      <GUID>5230FAFAF187DA45F2B873E192C1768D</GUID>
     </Controls_Palette_Data>
   </Library_Palette_Definition>
 </VI_Package_Builder_Settings>

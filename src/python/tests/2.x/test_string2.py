@@ -27,8 +27,10 @@ def test_fmv_update_string2():
     data = fmv.resolve_value(string_label)
     fmv.set_value_STR(string_label, data + " World")
     data = fmv.resolve_value(string_label)
+    fmv.set_value_STR(string_label, data + " °")
+    data = fmv.resolve_value(control_label=string_label)
 
-    assert data == "Hello World"
+    assert data == "Hello World °"
 
 def test_fmv_update_tree():
     tree_label = ("Tree")
@@ -91,8 +93,10 @@ def test_sp_update_string2():
     data = sp.resolve_value(control_label=string_label,subpanel_label=subpanel_label)
     sp.set_value_STR(subpanel_label, string_label, data + " World")
     data = sp.resolve_value(control_label=string_label, subpanel_label=subpanel_label)
+    sp.set_value_STR(subpanel_label, string_label, data + " °")
+    data = sp.resolve_value(control_label=string_label, subpanel_label=subpanel_label)
 
-    assert data == "Hello World"
+    assert data == "Hello World °"
 
 def test_sp_update_tree():
     tree_label = ("Tree")
@@ -156,8 +160,10 @@ def test_ssp_update_string2():
     data = ssp.resolve_value(string_label, subpanel_label, subsubpanel_label)
     ssp.set_value_STR(subpanel_label, subsubpanel_label, string_label, data + " World")
     data = ssp.resolve_value(string_label, subpanel_label, subsubpanel_label)
+    ssp.set_value_STR(subpanel_label, subsubpanel_label, string_label, data + " °")
+    data = ssp.resolve_value(string_label, subpanel_label, subsubpanel_label)
 
-    assert data == "Hello World"
+    assert data == "Hello World °"
 
 def test_ssp_update_tree():
     tree_label = ("Tree")

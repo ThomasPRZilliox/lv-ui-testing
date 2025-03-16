@@ -54,28 +54,25 @@
 		<Item Name="Tests" Type="Folder">
 			<Item Name="test - all.vi" Type="VI" URL="../ui-testing/test - all.vi"/>
 		</Item>
+		<Item Name="utils" Type="Folder">
+			<Item Name="MGI backup" Type="Folder">
+				<Item Name="Anything to String - backup.vi" Type="VI" URL="../ui-testing/MGI - backup/Anything to String - backup.vi"/>
+				<Item Name="Build Line - backup.vi" Type="VI" URL="../ui-testing/MGI - backup/Build Line - backup.vi"/>
+				<Item Name="Get Cluster Elements - backup.vi" Type="VI" URL="../ui-testing/MGI - backup/Get Cluster Elements - backup.vi"/>
+				<Item Name="MGI Get VI Control Ref[] - backup.vi" Type="VI" URL="../ui-testing/MGI - backup/MGI Get VI Control Ref[] - backup.vi"/>
+				<Item Name="Process Array Elements - backup.vi" Type="VI" URL="../ui-testing/MGI - backup/Process Array Elements - backup.vi"/>
+				<Item Name="Replace Characters - backup.vi" Type="VI" URL="../ui-testing/MGI - backup/Replace Characters - backup.vi"/>
+			</Item>
+		</Item>
 		<Item Name="ui-testing.lvlib" Type="Library" URL="../ui-testing/ui-testing.lvlib"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="user.lib" Type="Folder">
-				<Item Name="Anything to String.vi" Type="VI" URL="/&lt;userlib&gt;/_MGI/File/Anything to String.vi"/>
-				<Item Name="Build Line.vi" Type="VI" URL="/&lt;userlib&gt;/_MGI/File/Build Line.vi"/>
 				<Item Name="ClassID Names Enum__ogtk.ctl" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/appcontrol/appcontrol.llb/ClassID Names Enum__ogtk.ctl"/>
 				<Item Name="Current VIs Parents Ref__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/appcontrol/appcontrol.llb/Current VIs Parents Ref__ogtk.vi"/>
 				<Item Name="Find Focus State__ogtk.ctl" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/appcontrol/appcontrol.llb/Find Focus State__ogtk.ctl"/>
 				<Item Name="Find VI with Focus__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/appcontrol/appcontrol.llb/Find VI with Focus__ogtk.vi"/>
 				<Item Name="Fit VI window to Largest Dec__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/appcontrol/appcontrol.llb/Fit VI window to Largest Dec__ogtk.vi"/>
-				<Item Name="Get Cluster Elements.vi" Type="VI" URL="/&lt;userlib&gt;/_MGI/Cluster/Get Cluster Elements.vi"/>
-				<Item Name="Get Type Info.vi" Type="VI" URL="/&lt;userlib&gt;/_MGI/File/Get Type Info.vi"/>
 				<Item Name="Is One Frontmost__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/appcontrol/appcontrol.llb/Is One Frontmost__ogtk.vi"/>
-				<Item Name="MGI Caller&apos;s VI Reference.vi" Type="VI" URL="/&lt;userlib&gt;/_MGI/Application Control/MGI VI Reference/MGI Caller&apos;s VI Reference.vi"/>
-				<Item Name="MGI Current VI&apos;s Reference.vi" Type="VI" URL="/&lt;userlib&gt;/_MGI/Application Control/MGI VI Reference/MGI Current VI&apos;s Reference.vi"/>
-				<Item Name="MGI Get VI Control Ref[].vi" Type="VI" URL="/&lt;userlib&gt;/_MGI/Application Control/MGI Get VI Control Ref[].vi"/>
-				<Item Name="MGI Level&apos;s VI Reference.vi" Type="VI" URL="/&lt;userlib&gt;/_MGI/Application Control/MGI VI Reference/MGI Level&apos;s VI Reference.vi"/>
-				<Item Name="MGI Top Level VI Reference.vi" Type="VI" URL="/&lt;userlib&gt;/_MGI/Application Control/MGI VI Reference/MGI Top Level VI Reference.vi"/>
-				<Item Name="MGI VI Reference.vi" Type="VI" URL="/&lt;userlib&gt;/_MGI/Application Control/MGI VI Reference.vi"/>
-				<Item Name="Process Array Elements.vi" Type="VI" URL="/&lt;userlib&gt;/_MGI/File/Process Array Elements.vi"/>
-				<Item Name="Read Write Options Cluster.ctl" Type="VI" URL="/&lt;userlib&gt;/_MGI/File/Read Write Options Cluster.ctl"/>
-				<Item Name="Replace Characters.vi" Type="VI" URL="/&lt;userlib&gt;/_MGI/File/Replace Characters.vi"/>
 			</Item>
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Application Directory.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Application Directory.vi"/>
@@ -86,8 +83,6 @@
 				<Item Name="Details Display Dialog.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Details Display Dialog.vi"/>
 				<Item Name="DialogType.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/DialogType.ctl"/>
 				<Item Name="DialogTypeEnum.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/DialogTypeEnum.ctl"/>
-				<Item Name="DTbl Empty Digital.vi" Type="VI" URL="/&lt;vilib&gt;/Waveform/DTblOps.llb/DTbl Empty Digital.vi"/>
-				<Item Name="DWDT Empty Digital.vi" Type="VI" URL="/&lt;vilib&gt;/Waveform/DWDTOps.llb/DWDT Empty Digital.vi"/>
 				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Cluster From Error Code.vi"/>
 				<Item Name="Error Code Database.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Code Database.vi"/>
 				<Item Name="ErrWarn.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/ErrWarn.ctl"/>
@@ -104,6 +99,7 @@
 				<Item Name="LVBoundsTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVBoundsTypeDef.ctl"/>
 				<Item Name="LVNumericRepresentation.ctl" Type="VI" URL="/&lt;vilib&gt;/numeric/LVNumericRepresentation.ctl"/>
 				<Item Name="LVRectTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVRectTypeDef.ctl"/>
+				<Item Name="NI_Data Type.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/Data Type/NI_Data Type.lvlib"/>
 				<Item Name="NI_FileType.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/lvfile.llb/NI_FileType.lvlib"/>
 				<Item Name="NI_PackedLibraryUtility.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/LVLibp/NI_PackedLibraryUtility.lvlib"/>
 				<Item Name="Not Found Dialog.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Not Found Dialog.vi"/>
@@ -118,6 +114,7 @@
 				<Item Name="TRef Traverse.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/traverseref.llb/TRef Traverse.vi"/>
 				<Item Name="TRef TravTarget.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/traverseref.llb/TRef TravTarget.ctl"/>
 				<Item Name="Trim Whitespace.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Trim Whitespace.vi"/>
+				<Item Name="UTF8 Tools.lvlib" Type="Library" URL="/&lt;vilib&gt;/addons/Tools/Unicode/UTF8 Tools.lvlib"/>
 				<Item Name="VariantType.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/VariantDataType/VariantType.lvlib"/>
 				<Item Name="VI Scripting - Traverse.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/traverseref.llb/VI Scripting - Traverse.lvlib"/>
 				<Item Name="whitespace.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/whitespace.ctl"/>
