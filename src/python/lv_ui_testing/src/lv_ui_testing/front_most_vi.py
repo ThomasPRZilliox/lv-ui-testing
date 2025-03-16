@@ -34,6 +34,7 @@ def click_on_close():
 ##############
 # Get values #
 ##############
+
 def get_value(control_label, raw = False):
     logging.info(f"Sending request for value of control named {control_label}")
     data = {
