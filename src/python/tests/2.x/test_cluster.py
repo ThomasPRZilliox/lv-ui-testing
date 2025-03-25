@@ -147,3 +147,10 @@ def test_ssp_subsubcluster_write():
     data = ssp.get_value_xml("Cluster","Sub Panel","Sub Panel Children")['LvVariant']['Cluster']['Cluster']['Cluster']
     new_bool = data['Boolean']['Val']
     assert new_bool == "1"
+
+
+def test_bug_cluster_1():
+    """
+    When there was a cluster followed by a n
+    :return:
+    """
