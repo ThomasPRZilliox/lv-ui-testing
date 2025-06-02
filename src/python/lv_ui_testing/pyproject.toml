@@ -1,6 +1,10 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "lv_ui_testing"
-version = "2.1.1"
+version = "2.1.2"
 authors = [
   { name="Thomas Zilliox", email="thomas.zilliox67@gmail.com" },
 ]
@@ -9,9 +13,12 @@ readme = "README.md"
 requires-python = ">=3.8"
 classifiers = [
     "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
+#    "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
+
+license =  "MIT"
+
 
 dependencies = [
     "pyzmq>=26.0.3,<27",
@@ -22,9 +29,13 @@ dependencies = [
 Homepage = "https://github.com/ThomasPRZilliox/lv-ui-testing/wiki"
 Issues = "https://github.com/pypa/sampleproject/issues"
 
+
 #[tool.setuptools]
 #packages = ["lv_ui_testing", "lv_ui_testing.src", "lv_ui_testing.src.lv_ui_testing"]
 
 #[tool.setuptools.packages.find]
-#where = ["."]
+#where = ["src"]
 #include = ["lv_ui_testing*"]
+
+[tool.setuptools.packages]
+find = {where = ["src"], include = ["lv_ui_testing*"]}

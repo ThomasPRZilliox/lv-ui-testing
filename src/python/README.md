@@ -20,3 +20,13 @@ python -m build
 ```
 python -m twine upload dist/*
 ```
+
+
+## Remarks
+
+If some issues occurs with the update. Make sure to update twine to the latest version:
+
+```commandline
+pip uninstall twine
+pip install twine
+```
