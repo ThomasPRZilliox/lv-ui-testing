@@ -14,7 +14,7 @@ classifiers = [
 ]
 
 dependencies = [
-    "pyzmq==26.0.3",
+    "pyzmq>=26.0.3,<27",
     "xmltodict==0.14.2"
 ]
 

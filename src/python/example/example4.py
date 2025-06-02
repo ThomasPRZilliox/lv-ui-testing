@@ -7,7 +7,7 @@ def test_front_most_vi():
     assert front_most_vi == "example 4 - string.vi"
 
 def test_update_string():
-    # Generate a random plot and query the data insisde it
+    # Generate a random plot and query the data inside it
     string_label = "String"
 
     fmv.set_value_STR(string_label,"Hello")
