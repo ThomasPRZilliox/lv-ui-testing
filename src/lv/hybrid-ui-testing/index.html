@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Float Calculator</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    input, button { margin: 5px; padding: 8px; font-size: 16px; }
+  </style>
+</head>
+<body>
+  <h2>Float Calculator</h2>
+  <input id="input1" type="number" step="any" placeholder="Enter first number">
+  <input id="input2" type="number" step="any" placeholder="Enter second number">
+  <br>
+  <button id="sum" onclick="calculate('sum')">Sum</button>
+  <button id="subtract" onclick="calculate('subtract')">Subtract</button>
+  <button id="multiply" onclick="calculate('multiply')">Multiply</button>
+  <button id="divide" onclick="calculate('divide')">Divide</button>
+
+  <script>
+    const ws = new WebSocket('ws://localhost:8000');
+
+    ws.onopen = () => {
+      console.log('WebSocket connection opened.');
+    };
+
+    ws.onmessage = (event) => {
+      console.log('Received:', event.data);
+      if (event.data === 'stop') {
+        ws.send('exit');
+        console.log('Sent: exit');
+      }
+    };
+
+    ws.onclose = () => {
+      console.log('WebSocket connection closed.');
+    };
+
+    function calculate(operation) {
+      const input1 = parseFloat(document.getElementById('input1').value);
+      const input2 = parseFloat(document.getElementById('input2').value);
+      let result;
+
+      if (isNaN(input1) || isNaN(input2)) {
+        alert("Please enter valid float numbers.");
+        return;
+      }
+
+      switch (operation) {
+        case 'sum':
+          result = input1 + input2;
+          break;
+        case 'subtract':
+          result = input1 - input2;
+          break;
+        case 'multiply':
+          result = input1 * input2;
+          break;
+        case 'divide':
+          if (input2 === 0) {
+            alert("Cannot divide by zero.");
+            return;
+          }
+          result = input1 / input2;
+          break;
+      }
+
+      if (ws.readyState === WebSocket.OPEN) {
+        ws.send(result.toString());
+        console.log('Sent:', result.toString());
+      } else {
+        console.warn("WebSocket is not open.");
+      }
+    }
+  </script>
+</body>
+</html>
