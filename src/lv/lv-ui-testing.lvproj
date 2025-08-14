@@ -50,6 +50,8 @@
 			<Item Name="example 2 - value.vi" Type="VI" URL="../examples/example 2 - value.vi"/>
 			<Item Name="example 4 - string.vi" Type="VI" URL="../examples/example 4 - string.vi"/>
 			<Item Name="example 10 - resolve data.vi" Type="VI" URL="../ui-testing/example 10 - resolve data.vi"/>
+			<Item Name="example 11 - tabs.vi" Type="VI" URL="../ui-testing/example 11 - tabs.vi"/>
+			<Item Name="example 12 - enums.vi" Type="VI" URL="../ui-testing/example 12 - enums.vi"/>
 		</Item>
 		<Item Name="Tests" Type="Folder">
 			<Item Name="test - all.vi" Type="VI" URL="../ui-testing/test - all.vi"/>
