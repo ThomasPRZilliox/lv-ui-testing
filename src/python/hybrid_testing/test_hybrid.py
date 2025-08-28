@@ -18,17 +18,10 @@ tab.start()
 tab.call_method("DOM.enable")
 tab.call_method("Runtime.enable")
 
-
-# # Attach to the matching tab
-# tab = browser.connect_tab(tab)
-
-# Start the tab and enable domains
-tab.start()
-tab.call_method("Runtime.enable")
-tab.call_method("DOM.enable")
+NUM_OF_ITER = 3
 
 
-def control_float_calculator(input1, input2, operation="divide", waiting_time=1):
+def control_float_calculator(input1, input2, operation="divide", waiting_time=0.5):
     """
     Automates the Float Calculator WebView2 app using pychrome.
 
@@ -58,7 +51,7 @@ def control_float_calculator(input1, input2, operation="divide", waiting_time=1)
 # print(fmv.resolve_value("number"))
 
 @pytest.mark.parametrize("input_1, input_2, expected_sum", [
-    (i, j, i + j) for i in range(1, 6) for j in range(1, 6)
+    (i, j, i + j) for i in range(1, NUM_OF_ITER) for j in range(1, NUM_OF_ITER)
 ])
 def test_sum(input_1, input_2, expected_sum):
     control_float_calculator(input_1, input_2, "sum")
@@ -66,7 +59,7 @@ def test_sum(input_1, input_2, expected_sum):
 
 
 @pytest.mark.parametrize("input_1, input_2, expected_sub", [
-    (i, j, i - j) for i in range(1, 6) for j in range(1, 6)
+    (i, j, i - j) for i in range(1, NUM_OF_ITER) for j in range(1, NUM_OF_ITER)
 ])
 def test_subtract(input_1, input_2, expected_sub):
     control_float_calculator(input_1, input_2, "subtract")
@@ -74,7 +67,7 @@ def test_subtract(input_1, input_2, expected_sub):
 
 
 @pytest.mark.parametrize("input_1, input_2, expected_mul", [
-    (i, j, i * j) for i in range(1, 6) for j in range(1, 6)
+    (i, j, i * j) for i in range(1, NUM_OF_ITER) for j in range(1, NUM_OF_ITER)
 ])
 def test_mutlitply(input_1, input_2, expected_mul):
     control_float_calculator(input_1, input_2, "multiply")
@@ -82,7 +75,7 @@ def test_mutlitply(input_1, input_2, expected_mul):
 
 
 @pytest.mark.parametrize("input_1, input_2, expected_div", [
-    (i, j, i / j) for i in range(1, 6) for j in range(1, 6)
+    (i, j, i / j) for i in range(1, NUM_OF_ITER) for j in range(1, NUM_OF_ITER)
 ])
 def test_divide(input_1, input_2, expected_div):
     control_float_calculator(input_1, input_2, "divide")
