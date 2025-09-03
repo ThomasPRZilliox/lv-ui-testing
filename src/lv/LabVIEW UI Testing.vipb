@@ -1,7 +1,7 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2024-02-25 11:29:35" Modified_Date="2025-03-25 09:39:32" Creator="Thomas" Comments="" ID="c7c6b1110bd13d8d9e5414226572b446">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2024-02-25 11:29:35" Modified_Date="2025-09-03 10:31:07" Creator="Thomas" Comments="" ID="9d686afab2d2934b88891babcf1004a4">
   <Library_General_Settings>
     <Package_File_Name>Thomas_Zilliox_lib_LabVIEW_UI_Testing</Package_File_Name>
-    <Library_Version>2.0.3.19</Library_Version>
+    <Library_Version>2.0.4.20</Library_Version>
     <Auto_Increment_Version>false</Auto_Increment_Version>
     <Library_Source_Folder>ui-testing</Library_Source_Folder>
     <Library_Output_Folder>.</Library_Output_Folder>
@@ -45,7 +45,8 @@ https://github.com/ThomasPRZilliox/lv-ui-testing/wiki</Description>
       <Copyright/>
       <Packager/>
       <URL/>
-      <Release_Notes>* better error handling of the set cluster element</Release_Notes>
+      <Release_Notes>Better error handling in the main loop.
+Error handling of caption error for builds</Release_Notes>
     </Description>
     <Destinations>
       <Toolkit_VIs>
@@ -229,7 +230,7 @@ https://github.com/ThomasPRZilliox/lv-ui-testing/wiki</Description>
         <Path>ui-testing\start daemon.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>59EC859096083CFA6033BB8EE982BDEF</GUID>
+      <GUID>360C9D1F5D20178D9E05060233BBD45F</GUID>
     </Functions_Palette_Data>
     <Controls_Palette_Data>
       <Parent_Palette_Index>-1</Parent_Palette_Index>
@@ -264,7 +265,7 @@ https://github.com/ThomasPRZilliox/lv-ui-testing/wiki</Description>
         <Path>ui-testing\message.ctl</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>2483705A7C469B0823C47B5EA164BD81</GUID>
+      <GUID>28D7503859EC910BD33ECD4EF48126E2</GUID>
     </Controls_Palette_Data>
   </Library_Palette_Definition>
 </VI_Package_Builder_Settings>
