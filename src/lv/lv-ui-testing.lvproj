@@ -22,36 +22,42 @@
 				<Item Name="example 4b - string.vi" Type="VI" URL="../examples/example 4b - string.vi"/>
 			</Item>
 			<Item Name="example 5" Type="Folder">
-				<Item Name="example 5 - child.vi" Type="VI" URL="../ui-testing/example 5 - child.vi"/>
-				<Item Name="example 5 - grand child.vi" Type="VI" URL="../ui-testing/example 5 - grand child.vi"/>
-				<Item Name="example 5 - parent.vi" Type="VI" URL="../ui-testing/example 5 - parent.vi"/>
+				<Item Name="example 5 - child.vi" Type="VI" URL="../examples/example 5 - child.vi"/>
+				<Item Name="example 5 - grand child.vi" Type="VI" URL="../examples/example 5 - grand child.vi"/>
+				<Item Name="example 5 - parent.vi" Type="VI" URL="../examples/example 5 - parent.vi"/>
 			</Item>
 			<Item Name="example 6" Type="Folder">
-				<Item Name="example 6 - child.vi" Type="VI" URL="../ui-testing/example 6 - child.vi"/>
-				<Item Name="example 6 - grand child.vi" Type="VI" URL="../ui-testing/example 6 - grand child.vi"/>
-				<Item Name="example 6 - visibility.vi" Type="VI" URL="../ui-testing/example 6 - visibility.vi"/>
+				<Item Name="example 6 - child.vi" Type="VI" URL="../examples/example 6 - child.vi"/>
+				<Item Name="example 6 - grand child.vi" Type="VI" URL="../examples/example 6 - grand child.vi"/>
+				<Item Name="example 6 - visibility.vi" Type="VI" URL="../examples/example 6 - visibility.vi"/>
 			</Item>
 			<Item Name="example 7" Type="Folder">
-				<Item Name="example 7 - child.vi" Type="VI" URL="../ui-testing/example 7 - child.vi"/>
-				<Item Name="example 7 - cluster.vi" Type="VI" URL="../ui-testing/example 7 - cluster.vi"/>
-				<Item Name="example 7 - grand child.vi" Type="VI" URL="../ui-testing/example 7 - grand child.vi"/>
+				<Item Name="example 7 - child.vi" Type="VI" URL="../examples/example 7 - child.vi"/>
+				<Item Name="example 7 - cluster.vi" Type="VI" URL="../examples/example 7 - cluster.vi"/>
+				<Item Name="example 7 - grand child.vi" Type="VI" URL="../examples/example 7 - grand child.vi"/>
 			</Item>
 			<Item Name="example 8" Type="Folder">
-				<Item Name="example 8 - child.vi" Type="VI" URL="../ui-testing/example 8 - child.vi"/>
-				<Item Name="example 8 - grand child.vi" Type="VI" URL="../ui-testing/example 8 - grand child.vi"/>
+				<Item Name="example 8 - child.vi" Type="VI" URL="../examples/example 8 - child.vi"/>
+				<Item Name="example 8 - grand child.vi" Type="VI" URL="../examples/example 8 - grand child.vi"/>
 				<Item Name="example 8 - mouse click.vi" Type="VI" URL="../examples/example 8 - mouse click.vi"/>
 			</Item>
 			<Item Name="example 9" Type="Folder">
-				<Item Name="example 9 - bool.vi" Type="VI" URL="../ui-testing/example 9 - bool.vi"/>
-				<Item Name="example 9 - child.vi" Type="VI" URL="../ui-testing/example 9 - child.vi"/>
-				<Item Name="example 9 - grand child.vi" Type="VI" URL="../ui-testing/example 9 - grand child.vi"/>
+				<Item Name="example 9 - bool.vi" Type="VI" URL="../examples/example 9 - bool.vi"/>
+				<Item Name="example 9 - child.vi" Type="VI" URL="../examples/example 9 - child.vi"/>
+				<Item Name="example 9 - grand child.vi" Type="VI" URL="../examples/example 9 - grand child.vi"/>
+			</Item>
+			<Item Name="exemple 13" Type="Folder">
+				<Item Name="example 13 - child.vi" Type="VI" URL="../examples/example 13 - child.vi"/>
+				<Item Name="example 13 - grand child.vi" Type="VI" URL="../examples/example 13 - grand child.vi"/>
+				<Item Name="example 13 - list.vi" Type="VI" URL="../examples/example 13 - list.vi"/>
 			</Item>
 			<Item Name="example 1 - plot.vi" Type="VI" URL="../examples/example 1 - plot.vi"/>
 			<Item Name="example 2 - value.vi" Type="VI" URL="../examples/example 2 - value.vi"/>
 			<Item Name="example 4 - string.vi" Type="VI" URL="../examples/example 4 - string.vi"/>
-			<Item Name="example 10 - resolve data.vi" Type="VI" URL="../ui-testing/example 10 - resolve data.vi"/>
-			<Item Name="example 11 - tabs.vi" Type="VI" URL="../ui-testing/example 11 - tabs.vi"/>
-			<Item Name="example 12 - enums.vi" Type="VI" URL="../ui-testing/example 12 - enums.vi"/>
+			<Item Name="example 10 - resolve data.vi" Type="VI" URL="../examples/example 10 - resolve data.vi"/>
+			<Item Name="example 11 - tabs.vi" Type="VI" URL="../examples/example 11 - tabs.vi"/>
+			<Item Name="example 12 - enums.vi" Type="VI" URL="../examples/example 12 - enums.vi"/>
+			<Item Name="example 14 - splitters.vi" Type="VI" URL="../examples/example 14 - splitters.vi"/>
 		</Item>
 		<Item Name="Tests" Type="Folder">
 			<Item Name="test - all.vi" Type="VI" URL="../ui-testing/test - all.vi"/>
@@ -100,6 +106,7 @@
 				<Item Name="Longest Line Length in Pixels.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Longest Line Length in Pixels.vi"/>
 				<Item Name="LVBoundsTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVBoundsTypeDef.ctl"/>
 				<Item Name="LVNumericRepresentation.ctl" Type="VI" URL="/&lt;vilib&gt;/numeric/LVNumericRepresentation.ctl"/>
+				<Item Name="LVPointTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVPointTypeDef.ctl"/>
 				<Item Name="LVRectTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVRectTypeDef.ctl"/>
 				<Item Name="NI_Data Type.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/Data Type/NI_Data Type.lvlib"/>
 				<Item Name="NI_FileType.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/lvfile.llb/NI_FileType.lvlib"/>

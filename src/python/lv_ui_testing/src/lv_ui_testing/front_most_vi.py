@@ -2,6 +2,7 @@ import lv_ui_testing._core as core
 import logging
 import json
 import xmltodict
+import time
 
 
 def get_vi_name():
@@ -41,6 +42,41 @@ def click_on_close():
     }
     acknowledgement = core.send_message(data)
     return acknowledgement == "clicked"
+
+#########
+# Utils #
+#########
+
+def wait_for_window(
+    window_name: str,
+    waiting_time: float = 0.1,
+    maximum_waiting_time: float = 20.0
+) -> bool:
+    """
+    Waits until the specified window becomes the frontmost window.
+
+    Args:
+        window_name (str): The target window name to wait for.
+        waiting_time (float): Time to wait between checks, in seconds. Default is 0.1.
+        maximum_waiting_time (float): Maximum total waiting time, in seconds. Default is 20.
+
+    Returns:
+        bool: True if the window appeared within the timeout, False otherwise.
+    """
+    start_time = time.time()
+
+    while (time.time() - start_time) <= maximum_waiting_time:
+        front_most_vi = get_vi_name()
+        if front_most_vi == window_name:
+            elapsed = time.time() - start_time
+            logging.info("Window '%s' is frontmost after %.2f seconds.", window_name, elapsed)
+            return True
+
+        logging.debug("Current frontmost window: '%s'", front_most_vi)
+        time.sleep(waiting_time)
+
+    logging.warning("Window '%s' did not appear within %.2f seconds.", window_name, maximum_waiting_time)
+    return False
 
 
 
@@ -157,6 +193,79 @@ def resolve_value(control_label):
     """
     xml_string = get_value_xml(control_label,raw=True)
     return core.parse_lvvariant(xml_string)
+
+
+def get_listbox_index(control_label):
+    """
+    Return the index of a list box
+    :param control_label:
+    :return:
+    """
+
+    return resolve_value(control_label)
+
+def _format_get_request(control_label, command):
+    data = {
+        "message": f"FMV_{command}",
+        "payload": control_label
+    }
+    return data
+
+def get_listbox_item_names(control_label):
+    """
+    Return the item names (string in the list) of a list box
+    :param control_label:
+    :return:
+    """
+    logging.info(f"Sending request for item names of control (listbox) named {control_label}")
+    data = _format_get_request(control_label,"get_listbox_item_names")
+    item_names_xml = core.send_message(data)
+    item_names_dict = xmltodict.parse(item_names_xml)['Array']['String']
+    item_names = [el["Val"] for el in item_names_dict]
+    return item_names
+
+
+def get_multicolumn_listbox_item_names(control_label):
+    """
+    Return the item names (string in the list) of a list box
+    :param control_label:
+    :return:
+    """
+    logging.info(f"Sending request for item names of control (multicolumn listbox) named {control_label}")
+    data = _format_get_request(control_label,"get_multicolumn_listbox_item_names")
+    item_names_xml = core.send_message(data)
+    item_names_dict = xmltodict.parse(item_names_xml)['Array']['String']
+    item_names = [el["Val"] for el in item_names_dict]
+    return item_names
+
+def get_listbox_header(control_label):
+    """
+    Return the header of a list box
+    :param control_label:
+    :return:
+    """
+    logging.info(f"Sending request for header of control (listbox) named {control_label}")
+    data = _format_get_request(control_label, "get_listbox_header")
+    header_xml = core.send_message(data)
+    header = xmltodict.parse(header_xml)['String']['Val']
+    return header
+
+def get_multicolumn_listbox_header(control_label):
+    """
+    Return the header of a list box
+    :param control_label:
+    :return: header_column, header_row
+    """
+    logging.info(f"Sending request for header of control (multicolumn listbox) named {control_label}")
+    data = _format_get_request(control_label, "get_multicolumn_listbox_header")
+    header_xml = core.send_message(data)
+    header = xmltodict.parse(header_xml)['Cluster']['Array']
+    header_col = [el["Val"] for el in header[0]['String']]
+    try:
+        header_row = [el["Val"] for el in header[1]['String']]
+    except:
+        header_row = []
+    return header_col, header_row
 
 #############
 # Set Value #

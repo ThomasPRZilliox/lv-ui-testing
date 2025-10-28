@@ -184,7 +184,91 @@ def get_value_TREE(subpanel_label,subsubpanel_label,control_label):
     selected_tree_element = core.decode_tree(message)
     return selected_tree_element
 
+def get_listbox_index(control_label, subpanel_label, subsubpanel_label):
+    """
+    Return the index of a list box
+    :param control_label:
+    :param subpanel_label:
+    :param subsubpanel_label:
+    :return:
+    """
 
+    return resolve_value(control_label, subpanel_label, subsubpanel_label)
+
+
+def _format_get_request(control_label, subpanel_label, subsubpanel_label, command):
+    data = {
+        "message": f"SSP_{command}",
+        "payload": {
+            "control": control_label,
+            "subpanel": subpanel_label,
+            "subsubpanel": subsubpanel_label,
+        }
+    }
+    return data
+
+def get_listbox_item_names(control_label, subpanel_label, subsubpanel_label):
+    """
+    Return the item names (string in the list) of a list box
+    :param control_label:
+    :param subpanel_label:
+    :param subsubpanel_label:
+    :return:
+    """
+    logging.info(f"Sending request for item names of control (listbox) named {control_label}")
+    data = _format_get_request(control_label, subpanel_label, subsubpanel_label, command="get_listbox_item_names")
+    item_names_xml = core.send_message(data)
+    item_names_dict = xmltodict.parse(item_names_xml)['Array']['String']
+    item_names = [el["Val"] for el in item_names_dict]
+    return item_names
+
+def get_listbox_header(control_label, subpanel_label, subsubpanel_label):
+    """
+    Return the header of a list box
+    :param control_label:
+    :param subpanel_label:
+    :param subsubpanel_label:
+    :return:
+    """
+    logging.info(f"Sending request for header of control (listbox) named {control_label}")
+    data = _format_get_request(control_label, subpanel_label, subsubpanel_label, command="get_listbox_header")
+    item_names_xml = core.send_message(data)
+    header = xmltodict.parse(item_names_xml)['String']['Val']
+    return header
+
+def get_multicolumn_listbox_item_names(control_label, subpanel_label, subsubpanel_label):
+    """
+    Return the item names (string in the list) of a list box
+    :param control_label:
+    :param subpanel_label:
+    :param subsubpanel_label:
+    :return:
+    """
+    logging.info(f"Sending request for item names of control (multicolumn listbox) named {control_label}")
+    data = _format_get_request(control_label,subpanel_label, subsubpanel_label,"get_multicolumn_listbox_item_names")
+    item_names_xml = core.send_message(data)
+    item_names_dict = xmltodict.parse(item_names_xml)['Array']['String']
+    item_names = [el["Val"] for el in item_names_dict]
+    return item_names
+
+def get_multicolumn_listbox_header(control_label, subpanel_label, subsubpanel_label):
+    """
+    Return the header of a list box
+    :param control_label:
+    :param subpanel_label:
+    :param subsubpanel_label:
+    :return: header_column, header_row
+    """
+    logging.info(f"Sending request for header of control (multicolumn listbox) named {control_label}")
+    data = _format_get_request(control_label,subpanel_label, subsubpanel_label, "get_multicolumn_listbox_header")
+    header_xml = core.send_message(data)
+    header = xmltodict.parse(header_xml)['Cluster']['Array']
+    header_col = [el["Val"] for el in header[0]['String']]
+    try:
+        header_row = [el["Val"] for el in header[1]['String']]
+    except:
+        header_row = []
+    return header_col, header_row
 
 
 ##############

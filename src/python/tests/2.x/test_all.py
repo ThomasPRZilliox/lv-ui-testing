@@ -69,3 +69,29 @@ def test_example_10():
     time.sleep(2)
     subprocess.run(["pytest", "test_retrieve_data.py"], check=True)  # Runs test_example.py using pytest
     fmv.click_on_close()
+
+def test_example_11():
+    fmv.click_on_button("Start test11")
+    time.sleep(2)
+    subprocess.run(["pytest", "test_tabs.py"], check=True)  # Runs test_example.py using pytest
+    fmv.click_on_close()
+
+def test_example_12():
+    fmv.click_on_button("Start test12")
+    time.sleep(2)
+    subprocess.run(["pytest", "test_enums.py"], check=True)  # Runs test_example.py using pytest
+    fmv.click_on_close()
+
+
+def test_example_13():
+    fmv.click_on_button("Start test13")
+    time.sleep(2)
+    subprocess.run(["pytest", "test_list.py"], check=True)  # Runs test_example.py using pytest
+    fmv.click_on_close()
+
+
+def test_example_14():
+    fmv.click_on_button("Start test14")
+    time.sleep(2)
+    subprocess.run(["pytest", "test_splitter.py"], check=True)  # Runs test_example.py using pytest
+    fmv.click_on_close()
