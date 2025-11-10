@@ -109,4 +109,5 @@
 	<Item Name="typedef" Type="Folder">
 		<Item Name="message.ctl" Type="VI" URL="../message.ctl"/>
 	</Item>
+	<Item Name="button position within vi.vi" Type="VI" URL="../button position within vi.vi"/>
 </Library>

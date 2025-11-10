@@ -46,6 +46,13 @@
 				<Item Name="example 9 - child.vi" Type="VI" URL="../examples/example 9 - child.vi"/>
 				<Item Name="example 9 - grand child.vi" Type="VI" URL="../examples/example 9 - grand child.vi"/>
 			</Item>
+			<Item Name="example 14" Type="Folder">
+				<Item Name="example 14 - sp.vi" Type="VI" URL="../examples/example 14 - sp.vi"/>
+				<Item Name="example 14 - splitters.vi" Type="VI" URL="../examples/example 14 - splitters.vi"/>
+				<Item Name="example 14 - ssp.vi" Type="VI" URL="../examples/example 14 - ssp.vi"/>
+				<Item Name="example 14 - sub ssp.vi" Type="VI" URL="../examples/example 14 - sub ssp.vi"/>
+				<Item Name="example 14 - sub.vi" Type="VI" URL="../examples/example 14 - sub.vi"/>
+			</Item>
 			<Item Name="exemple 13" Type="Folder">
 				<Item Name="example 13 - child.vi" Type="VI" URL="../examples/example 13 - child.vi"/>
 				<Item Name="example 13 - grand child.vi" Type="VI" URL="../examples/example 13 - grand child.vi"/>
@@ -57,7 +64,6 @@
 			<Item Name="example 10 - resolve data.vi" Type="VI" URL="../examples/example 10 - resolve data.vi"/>
 			<Item Name="example 11 - tabs.vi" Type="VI" URL="../examples/example 11 - tabs.vi"/>
 			<Item Name="example 12 - enums.vi" Type="VI" URL="../examples/example 12 - enums.vi"/>
-			<Item Name="example 14 - splitters.vi" Type="VI" URL="../examples/example 14 - splitters.vi"/>
 		</Item>
 		<Item Name="Tests" Type="Folder">
 			<Item Name="test - all.vi" Type="VI" URL="../ui-testing/test - all.vi"/>
